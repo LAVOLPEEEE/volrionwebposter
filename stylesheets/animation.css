@@ -1,0 +1,76 @@
+@keyframes blinkLetters-1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animationTransition {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -200vw;
+  }
+}
+@keyframes animationTransitionText {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -86vw;
+  }
+}
+@keyframes animationScreenChange {
+  0% {
+    background-position-x: 0;
+  }
+  50% {
+    background-position-x: -67.3vw;
+  }
+  100% {
+    background-position-x: -134.7vw;
+  }
+}
+@keyframes animationProgressBarChange {
+  0% {
+    background-position-x: 0;
+  }
+  10% {
+    background-position-x: -21.1vw;
+  }
+  20% {
+    background-position-x: -42.2vw;
+  }
+  30% {
+    background-position-x: -63.3vw;
+  }
+  40% {
+    background-position-x: -84.4vw;
+  }
+  50% {
+    background-position-x: -105.5vw;
+  }
+  60% {
+    background-position-x: -126.6vw;
+  }
+  70% {
+    background-position-x: -147.7vw;
+  }
+  80% {
+    background-position-x: -168.8vw;
+  }
+  90% {
+    background-position-x: -189.9vw;
+  }
+  100% {
+    background-position-x: -210vw;
+  }
+}

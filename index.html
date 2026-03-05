@@ -1,0 +1,260 @@
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Модель с анимацией</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  </head>
+  <body>
+    <section>
+      <div class="scene">
+        <canvas id="canvas"></canvas>
+        <div class="big-overlay-texts">
+          <div class="big-overlay-text-top">разгадай</div>
+          <div class="big-overlay-text-bottom">меня</div>
+        </div>
+        <div class="letters">
+          <span class="letter1" id="animation1-for-letter">#</span>
+          <span class="letter2" id="animation2-for-letter">%</span>
+          <span class="letter3" id="animation3-for-letter">!</span>
+          <span class="letter4" id="animation4-for-letter">7</span>
+          <span class="letter5" id="animation5-for-letter">%</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="transition1">
+      <div class="transition1_1"></div>
+    </section>
+
+    <section class="first_game">
+      <div class="big_flex_first_game">
+        <div class="left_flex_first_game">
+          <div class="text">
+            <p id="text_left_top_1">
+              Сопоставь знаки и буквы.  <br />Кликай — услышишь уникальный звук!
+            </p>
+          </div>
+          <div class="screen_with_progressbar">
+            <div class="screen"></div>
+            <div class="progressbar"></div>
+          </div>
+        </div>
+        <div class="right_flex_first_game">
+          <div class="top_keyboard_with_text">
+            <div class="text_right_top">
+              <p id="text_right_top_1">Буквы</p>
+            </div>
+            <div class="top_keyboard">
+              <div class="top_keyboard_firstline_buttons">
+                <img
+                  class="button_1_1"
+                  src="static/images/button1.svg"
+                  alt=""
+                />
+                <img
+                  class="button_2_1"
+                  src="static/images/button2.svg"
+                  alt=""
+                />
+                <img
+                  class="button_3_1"
+                  src="static/images/button3.svg"
+                  alt=""
+                />
+                <img
+                  class="button_4_1"
+                  src="static/images/button4.svg"
+                  alt=""
+                />
+                <img
+                  class="button_5_1"
+                  src="static/images/button5.svg"
+                  alt=""
+                />
+              </div>
+              <div class="lines_keyboard_1">
+                <img
+                  class="line_keyboard_1"
+                  src="static/images/line_keyboard.svg"
+                  alt=""
+                />
+              </div>
+              <div class="top_keyboard_secondline_buttons">
+                <img
+                  class="button_6_1"
+                  src="static/images/button6.svg"
+                  alt=""
+                />
+                <img
+                  class="button_7_1"
+                  src="static/images/button7.svg"
+                  alt=""
+                />
+                <img
+                  class="button_8_1"
+                  src="static/images/button8.svg"
+                  alt=""
+                />
+                <img
+                  class="button_9_1"
+                  src="static/images/button9.svg"
+                  alt=""
+                />
+                <img
+                  class="button_10_1"
+                  src="static/images/button10.svg"
+                  alt=""
+                />
+              </div>
+              <div class="lines_keyboard_2">
+                <img
+                  class="line_keyboard_2"
+                  src="static/images/line_keyboard2.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="bottom_keyboard_with_text">
+            <div class="text_right_bottom">
+              <p id="text_right_botton_1">Символы</p>
+            </div>
+            <div class="bottom_keyboard">
+              <div class="bottom_keyboard_firstline_buttons">
+                <img
+                  class="button_1_2"
+                  src="static/images/button11.svg"
+                  alt=""
+                />
+                <img
+                  class="button_2_2"
+                  src="static/images/button12.svg"
+                  alt=""
+                />
+                <img
+                  class="button_3_2"
+                  src="static/images/button13.svg"
+                  alt=""
+                />
+                <img
+                  class="button_4_2"
+                  src="static/images/button14.svg"
+                  alt=""
+                />
+                <img
+                  class="button_5_2"
+                  src="static/images/button15.svg"
+                  alt=""
+                />
+              </div>
+              <div class="lines_keyboard_3">
+                <img
+                  class="line_keyboard_3"
+                  src="static/images/line_keyboard.svg"
+                  alt=""
+                />
+              </div>
+              <div class="bottom_keyboard_secondline_buttons">
+                <img
+                  class="button_6_2"
+                  src="static/images/button16.svg"
+                  alt=""
+                />
+                <img
+                  class="button_7_2"
+                  src="static/images/button17.svg"
+                  alt=""
+                />
+                <img
+                  class="button_8_2"
+                  src="static/images/button18.svg"
+                  alt=""
+                />
+                <img
+                  class="button_9_2"
+                  src="static/images/button19.svg"
+                  alt=""
+                />
+                <img
+                  class="button_10_2"
+                  src="static/images/button20.svg"
+                  alt=""
+                />
+              </div>
+              <div class="lines_keyboard_4">
+                <img
+                  class="line_keyboard_4"
+                  src="static/images/line_keyboard2.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="transition2">
+      <div class="transition2_1"></div>
+    </section>
+    <section class="second_game">
+      <div class="big_flex_second_game">
+        <div class="left_flex_second_game">
+          <div class="text_alphabet">
+            <div class="text_2">
+              <p id="text_left_top_2">
+                Составь слово по переводу. Перетаскивай символы <br />в
+                правильном порядке!
+              </p>
+            </div>
+            <div class="aphabet_button"></div>
+          </div>
+          <div class="word_answer">
+            <div class="words">
+              <div class="word_1"></div>
+              <div class="word_2"></div>
+              <div class="word_3"></div>
+            </div>
+            <div class="answers">
+              <div class="answer_1"></div>
+              <div class="answer_2"></div>
+              <div class="answer_3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="right_flex_second_game">
+          <div class="letters_second_game">
+            <img class="letter_ya1" src="static/images/letter_ya.svg" alt="" />
+            <img class="letter_o1_1" src="static/images/letter_o.svg" alt="" />
+            <img class="letter_o1_2" src="static/images/letter_o.svg" alt="" />
+            <img class="letter_b1" src="static/images/letter_b.svg" alt="" />
+            <img class="letter_k1" src="static/images/letter_k.svg" alt="" />
+            <img class="letter_l2" src="static/images/letter_l.svg" alt="" />
+            <img class="letter_t2" src="static/images/letter_t.svg" alt="" />
+            <img class="letter_o2" src="static/images/letter_o.svg" alt="" />
+            <img class="letter_e2" src="static/images/letter_e.svg" alt="" />
+            <img class="letter_v2" src="static/images/letter_v.svg" alt="" />
+            <img class="letter_ts2" src="static/images/letter_ts.svg" alt="" />
+            <img class="letter_k2" src="static/images/letter_k.svg" alt="" />
+            <img class="letter_b3" src="static/images/letter_b.svg" alt="" />
+            <img class="letter_a3" src="static/images/letter_a.svg" alt="" />
+            <img class="letter_e3" src="static/images/letter_e.svg" alt="" />
+            <img class="letter_z3" src="static/images/letter_z.svg" alt="" />
+            <img class="letter_r3" src="static/images/letter_r.svg" alt="" />
+            <img class="letter_yo3" src="static/images/letter_yo.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="transition3">
+      <div class="transition3_1"></div>
+    </section>
+    <section class="third_game">
+      <div class="big_flex_third_game"></div>
+    </section>
+    <script src="javascripts/model.js"></script>
+    <script src="javascripts/letters.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Fixedsys';
+  src:
+    url('../static/fonts/ofont.ru_Fixedsys.ttf') format('woff'),
+    url('../static/fonts/ofont.ru_Fixedsys.woff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
