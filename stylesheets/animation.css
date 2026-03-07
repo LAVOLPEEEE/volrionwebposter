@@ -12,6 +12,19 @@
     opacity: 0;
   }
 }
+
+@keyframes changeLettersAnimation {
+  0% {
+    content: '&**@^%@@';
+  }
+  4% {
+    content: '&**(^%@@';
+  }
+  100% {
+    content: 'разгадай';
+  }
+}
+
 @keyframes animationTransition {
   0% {
     background-position-x: 0;

@@ -33,9 +33,10 @@ body {
 }
 .big-overlay-text-top {
   position: absolute;
-  left: 7vw;
+  left: 7.5vw;
   top: 1vw;
   z-index: -1;
+  animation: changeLettersAnimation 2.5s linear infinite;
 }
 .big-overlay-text-bottom {
   position: absolute;
@@ -49,62 +50,110 @@ body {
   color: #ffd9e8;
   cursor: pointer;
 }
-.letter1 {
+
+.letter1,
+.letter3,
+.letter5,
+.letter7,
+.letter9,
+.letter11,
+.letter13,
+.letter15,
+.letter17,
+.letter19 {
   position: absolute;
+  animation: blinkLetters-1 4s linear infinite;
+}
+.letter2,
+.letter4,
+.letter6,
+.letter8,
+.letter10,
+.letter12,
+.letter14,
+.letter16,
+.letter18 {
+  position: absolute;
+  animation: blinkLetters-1 3s linear infinite;
+}
+
+.letter1 {
   top: 1.5vw;
   left: 18vw;
-  animation: blinkLetters-1 3s linear infinite;
 }
 .letter2 {
-  position: absolute;
   top: 4vw;
   left: 42vw;
-  animation: blinkLetters-1 3s linear infinite;
 }
 .letter3 {
-  position: absolute;
   top: 1.5vw;
   left: 72vw;
-  animation: blinkLetters-1 3s linear infinite;
 }
 .letter4 {
-  position: absolute;
   top: 14vw;
   left: 3vw;
-  animation: blinkLetters-1 3s linear infinite;
 }
 .letter5 {
-  position: absolute;
-  top: 15vw;
+  top: 8vw;
   left: 95vw;
-  animation: blinkLetters-1 3s linear infinite;
 }
 
 .letter6 {
-  position: absolute;
-  top: 15vw;
-  left: 95vw;
-  animation: blinkLetters-1 3s linear infinite;
+  top: 21vw;
+  left: 20vw;
 }
 .letter7 {
-  position: absolute;
-  top: 15vw;
-  left: 95vw;
-  animation: blinkLetters-1 3s linear infinite;
+  top: 29vw;
+  left: 30vw;
 }
 .letter8 {
-  position: absolute;
-  top: 15vw;
-  left: 95vw;
-  animation: blinkLetters-1 3s linear infinite;
+  top: 38vw;
+  left: 17vw;
 }
 .letter9 {
-  position: absolute;
-  top: 15vw;
-  left: 95vw;
-  animation: blinkLetters-1 3s linear infinite;
+  top: 29vw;
+  left: 6vw;
 }
-
+.letter10 {
+  top: 49vw;
+  left: 23vw;
+}
+.letter11 {
+  top: 50vw;
+  left: 4vw;
+}
+.letter12 {
+  top: 50vw;
+  left: 46vw;
+}
+.letter13 {
+  top: 50vw;
+  left: 69vw;
+}
+.letter14 {
+  top: 44vw;
+  left: 78vw;
+}
+.letter15 {
+  top: 50vw;
+  left: 95vw;
+}
+.letter16 {
+  top: 34vw;
+  left: 87vw;
+}
+.letter17 {
+  top: 27vw;
+  left: 70vw;
+}
+.letter18 {
+  top: 26vw;
+  left: 96vw;
+}
+.letter19 {
+  top: 20vw;
+  left: 82vw;
+}
 /* пиксельный переход  */
 .transition1 {
   position: relative;
@@ -257,28 +306,13 @@ body {
   gap: 2vw;
 }
 
-.button_1_1,
-.button_2_1,
-.button_3_1,
-.button_4_1,
-.button_5_1,
-.button_6_1,
-.button_7_1,
-.button_8_1,
-.button_9_1,
-.button_10_1,
-.button_1_2,
-.button_2_2,
-.button_3_2,
-.button_4_2,
-.button_5_2,
-.button_6_2,
-.button_7_2,
-.button_8_2,
-.button_9_2,
-.button_10_2 {
+.btn {
   width: 6vw;
   height: 6vw;
+}
+
+.button_pressed {
+  padding-top: 1vw;
 }
 
 .top_keyboard_secondline_buttons {
@@ -379,14 +413,14 @@ body {
 .second_game {
   position: relative;
   width: 100vw;
-  height: 54vw;
+  height: 60vw;
   background-color: #ffffff;
 }
 
 .big_flex_second_game {
   display: flex;
   flex-direction: row;
-  gap: 6vw;
+  gap: 3vw;
   padding: 4vw;
 }
 
@@ -394,247 +428,235 @@ body {
 .left_flex_second_game {
   display: flex;
   flex-direction: column;
-  gap: 8.2vw;
   width: 49vw;
-  height: 50vw;
+  height: 60vw;
 }
-.text_alphabet {
+.msg_alphabet_button {
   display: flex;
   flex-direction: row;
   width: 49vw;
-  gap: 2vw;
-  height: 11.3vw;
+  height: 14vw;
 }
-.text_2 {
-  width: 30vw;
-  height: 15vw;
+.msg2 {
+  width: 42vw;
+  height: 14vw;
   background-image: url(../static/images/msg2.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 3.4vw 2vw 0 2vw;
 }
-
-#text_left_top_2 {
+.msg2 p {
   font-family: 'Fixedsys';
   font-weight: normal;
   font-style: normal;
-  color: black;
   font-size: 2vw;
+  color: #45893a;
+  padding-top: 4.1vw;
+  padding-left: 2.5vw;
 }
 
-.aphabet_button {
-  width: 3.55vw;
-  height: 3.5vw;
-  background-image: url(../static/images/alphabet_button.svg);
+.alphabet_button {
+  width: 6vw;
+  height: 6vw;
+  background-image: url(../static/images/button_alphabet.svg);
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-.word_answer {
+.words_answer {
   display: flex;
   flex-direction: row;
+  gap: 1vw;
   width: 49vw;
-  gap: 2vw;
-  height: 30vw;
+  height: 34vw;
 }
 .words {
   display: flex;
   flex-direction: column;
+  gap: 1vw;
   width: 39vw;
-  gap: 2vw;
-  height: 30vw;
-}
-.word_1,
-.word_2,
-.word_3 {
-  height: 8vw;
-  width: 39vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.word_1 {
-  background-image: url(../static/images/word_1.svg);
-}
-.word_2 {
-  background-image: url(../static/images/word_2.svg);
-}
-.word_3 {
-  background-image: url(../static/images/word_3.svg);
+  height: 40vw;
 }
 .answers {
   display: flex;
   flex-direction: column;
-  width: 6.7vw;
-  gap: 3.3vw;
-  height: 30vw;
+  gap: 4vw;
+  width: 9vw;
+  height: 40vw;
+  padding-top: 2.9vw;
 }
-.answer_1,
-.answer_2,
-.answer_3 {
-  height: 6.7vw;
-  width: 6.7vw;
-  background-size: contain;
+
+.word1 {
+  width: 39vw;
+  height: 24vw;
+  background-size: 39vw;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(../static/images/conteiner1.svg);
+}
+.word2 {
+  width: 39vw;
+  height: 24vw;
+  background-size: 39vw;
+  background-repeat: no-repeat;
+  background-image: url(../static/images/conteiner2.svg);
+}
+.word3 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.15vw;
+  width: 39vw;
+  height: 19vw;
+  padding-top: 5.3vw;
+  padding-left: 2vw;
+  background-size: 39vw;
+  background-repeat: no-repeat;
+  background-image: url(../static/images/conteiner3.svg);
 }
 
-.answer_1 {
-  background-image: url(../static/images/answer_2.svg);
-}
-.answer_2 {
-  background-image: url(../static/images/answer_2.svg);
-}
-.answer_3 {
-  background-image: url(../static/images/answer_2.svg);
+.word3 img {
+  width: 5vw;
+  height: 5vw;
 }
 
+.answer_second_game1,
+.answer_second_game2,
+.answer_second_game3 {
+  width: 9vw;
+  height: 18vw;
+  background-size: 27vw;
+  background-repeat: no-repeat;
+}
+.answer_second_game1 {
+  background-image: url(../static/images/answer1_2.svg);
+}
+.answer_second_game2 {
+  background-image: url(../static/images/answer2_2.svg);
+}
+.answer_second_game3 {
+  background-image: url(../static/images/answer3_2.svg);
+}
 /* правая сторона флекса */
 .right_flex_second_game {
   display: flex;
-  flex-direction: column;
-  gap: 6vw;
-  width: 37vw;
-  height: 50vw;
+  width: 40vw;
+  height: 60vw;
+  background-image: url(../static/images/case.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(../static/images/case.svg);
-}
-.letter_o1_1,
-.letter_k1,
-.letter_v2,
-.letter_b3,
-.letter_e3,
-.letter_l2,
-.letter_z3,
-.letter_o2 {
-  position: absolute;
-  height: 6.75vw;
-  width: 6.75vw;
 }
 
-.letter_ya1,
-.letter_b1,
-.letter_e2,
-.letter_t2,
-.letter_o1_2,
-.letter_ts2,
-.letter_a3,
-.letter_k2,
-.letter_r3,
-.letter_yo3 {
+.right_flex_second_game img {
   position: absolute;
-  height: 6.75vw;
-  width: 6.75vw;
-  z-index: 100;
+  width: 5.5vw;
+  height: 5.5vw;
+  cursor: move;
 }
 
-.letter_o1_1 {
-  top: 6vw;
+.letter_о1 {
+  top: 9vw;
   left: 61vw;
-  rotate: 14deg;
+  rotate: 29deg;
 }
-.letter_ya1 {
-  top: 21vw;
-  left: 66vw;
-  rotate: 9deg;
-}
-.letter_b1 {
-  top: 12vw;
-  left: 64vw;
-  rotate: -17deg;
-}
-.letter_e2 {
+.letter_ye1 {
   top: 8vw;
-  left: 74vw;
-  rotate: 5deg;
-}
-.letter_t2 {
-  top: 7vw;
-  left: 85vw;
-  rotate: 16deg;
-}
-.letter_k1 {
-  top: 13vw;
-  left: 80vw;
-  rotate: -23deg;
-}
-.letter_v2 {
-  top: 16vw;
-  left: 71vw;
-  rotate: 17deg;
-}
-.letter_o1_2 {
-  top: 18vw;
-  left: 86vw;
-  rotate: 5deg;
-}
-.letter_ts2 {
-  top: 21vw;
-  left: 77vw;
-  rotate: -17deg;
-}
-.letter_b3 {
-  top: 26vw;
-  left: 86vw;
-  rotate: 16deg;
-}
-.letter_a3 {
-  top: 33vw;
-  left: 85vw;
-  rotate: 40deg;
-}
-.letter_e3 {
-  top: 29vw;
-  left: 78vw;
-  rotate: 10deg;
-}
-.letter_k2 {
-  top: 41vw;
-  left: 86vw;
-  rotate: 10deg;
-}
-.letter_l2 {
-  top: 38vw;
-  left: 77vw;
-  rotate: -13deg;
-}
-.letter_z3 {
-  top: 29vw;
-  left: 69vw;
-  rotate: -9deg;
-}
-.letter_r3 {
-  top: 37vw;
-  left: 68vw;
+  left: 73vw;
   rotate: 6deg;
 }
-.letter_o2 {
+.letter_t1 {
+  top: 10vw;
+  left: 86vw;
+  rotate: 17deg;
+}
+.letter_v1 {
+  top: 21vw;
+  left: 60vw;
+  rotate: -14deg;
+}
+.letter_b1 {
+  top: 16vw;
+  left: 68vw;
+  rotate: -29deg;
+}
+.letter_k1 {
+  top: 18vw;
+  left: 78vw;
+  rotate: -15deg;
+}
+.letter_о2 {
+  top: 21vw;
+  left: 87vw;
+  rotate: -7deg;
+}
+.letter_ya1 {
+  top: 30vw;
+  left: 63vw;
+  rotate: 30deg;
+}
+.letter_ts1 {
+  top: 26vw;
+  left: 73vw;
+  rotate: -34deg;
+}
+.letter_b2 {
+  top: 30vw;
+  left: 83vw;
+  rotate: 10deg;
+}
+.letter_yo1 {
   top: 40vw;
-  left: 62vw;
-  rotate: -27deg;
+  left: 61vw;
+  rotate: -39deg;
 }
-.letter_yo3 {
-  top: 29vw;
-  left: 62vw;
-  rotate: 22deg;
+.letter_z1 {
+  top: 37vw;
+  left: 70vw;
+  rotate: 10deg;
 }
-
+.letter_ye2 {
+  top: 38vw;
+  left: 79vw;
+  rotate: -19deg;
+}
+.letter_a1 {
+  top: 41vw;
+  left: 87vw;
+  rotate: -44deg;
+}
+.letter_о3 {
+  top: 48vw;
+  left: 60vw;
+  rotate: 20deg;
+}
+.letter_r1 {
+  top: 49vw;
+  left: 85vw;
+  rotate: -19deg;
+}
+.letter_l1 {
+  top: 46vw;
+  left: 77vw;
+  rotate: -5deg;
+}
+.letter_k2 {
+  top: 48vw;
+  left: 68vw;
+  rotate: 39deg;
+}
 /* <!------- пиксельный переход -------> */
+
 .transition3 {
   position: relative;
   width: 100vw;
-  height: 15vw;
-  background-color: #6a9051;
+  height: 14.9vw;
 }
-/* .transition2_1 {
+.transition3_1 {
   width: 100vw;
-  height: 18vw;
+  height: 15vw;
   background-image: url('../static/images/line.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 200vw;
   animation: animationTransition 1s steps(2) infinite;
   animation-play-state: running;
-} */
+}
 
 /* <!------- 3 игра -------> */
 .third_game {
