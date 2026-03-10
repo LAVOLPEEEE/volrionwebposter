@@ -417,6 +417,28 @@ body {
   background-color: #ffffff;
 }
 
+.alphabet {
+  position: absolute;
+  z-index: 100;
+  width: 70vw;
+  height: auto;
+  margin-left: 15vw;
+  margin-top: 4vw;
+}
+
+.alphabet_hidden {
+  display: none;
+}
+
+.close_alphabet {
+  position: absolute;
+  z-index: 110;
+  width: 3.6vw;
+  height: 3.6vw;
+  margin-left: 16.5vw;
+  margin-top: 5.5vw;
+}
+
 .big_flex_second_game {
   display: flex;
   flex-direction: row;
@@ -484,22 +506,7 @@ body {
   height: 40vw;
   padding-top: 2.9vw;
 }
-
-.word1 {
-  width: 39vw;
-  height: 24vw;
-  background-size: 39vw;
-  background-repeat: no-repeat;
-  background-image: url(../static/images/conteiner1.svg);
-}
-.word2 {
-  width: 39vw;
-  height: 24vw;
-  background-size: 39vw;
-  background-repeat: no-repeat;
-  background-image: url(../static/images/conteiner2.svg);
-}
-.word3 {
+.answer_word {
   display: flex;
   flex-direction: row;
   gap: 1.15vw;
@@ -509,7 +516,20 @@ body {
   padding-left: 2vw;
   background-size: 39vw;
   background-repeat: no-repeat;
+}
+.word1 {
+  background-image: url(../static/images/conteiner1.svg);
+}
+.word2 {
+  background-image: url(../static/images/conteiner2.svg);
+}
+.word3 {
   background-image: url(../static/images/conteiner3.svg);
+}
+
+.answer_word img {
+  width: 5vw;
+  height: 5vw;
 }
 
 .word3 img {
@@ -550,8 +570,19 @@ body {
   height: 5.5vw;
   cursor: move;
 }
+.draggable {
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  z-index: 10;
+  pointer-events: auto;
+  touch-action: none;
+}
+.draggable:active {
+  cursor: grabbing;
+}
 
-.letter_о1 {
+.letter_o1 {
   top: 9vw;
   left: 61vw;
   rotate: 29deg;
@@ -581,7 +612,7 @@ body {
   left: 78vw;
   rotate: -15deg;
 }
-.letter_о2 {
+.letter_o2 {
   top: 21vw;
   left: 87vw;
   rotate: -7deg;
@@ -621,7 +652,7 @@ body {
   left: 87vw;
   rotate: -44deg;
 }
-.letter_о3 {
+.letter_o3 {
   top: 48vw;
   left: 60vw;
   rotate: 20deg;
@@ -662,13 +693,385 @@ body {
 .third_game {
   position: relative;
   width: 100vw;
-  height: 54vw;
-  background-color: #919191;
+  height: 40vw;
+  background-color: #9ce58f;
 }
 
 .big_flex_third_game {
   display: flex;
   flex-direction: row;
-  gap: 6vw;
-  padding: 4vw;
+  gap: 2vw;
+  padding: 2vw;
+}
+
+.left_flex_third_game {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 52vw;
+  height: 36vw;
+  background-image: url('../static/images/quiz_background1.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 6vw 7vw 7vw 5.8vw;
+}
+
+/* <!---- квиз ----> */
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.question-number {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4vw;
+  color: #fcacc9;
+}
+
+.question-text {
+  margin: 0.5vw 0 2vw 0;
+  color: #ff4a8c;
+  font-size: 2vw;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+  margin-bottom: 1vw;
+}
+
+.option {
+  padding: 0.5vw;
+  border: 0.3vw solid #ff4a8c;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 2vw;
+  color: #ff4a8c;
+}
+
+.option:hover {
+  background-color: #ff4a8c;
+  color: #ffffff;
+  border-color: #ff4a8c;
+}
+
+.correct {
+  background-color: #d4edda;
+  border-color: #28a745;
+  color: #28a745;
+  cursor: default;
+}
+
+.incorrect {
+  background-color: #ff9aa2;
+  border-color: #ff0922;
+  color: #ff0922;
+  cursor: default;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.result {
+  text-align: center;
+  font-size: 2vw;
+  margin: 5vw 0;
+  color: #ff4a8c;
+}
+
+button {
+  font-family: 'Fixedsys';
+  padding: 0.5vw;
+  background: #ffffff;
+  color: #ff4a8c;
+  border: 0.3vw solid #ff4a8c;
+  cursor: pointer;
+  font-size: 2vw;
+  width: 39.2vw;
+}
+
+button:hover {
+  background: #ff4a8c;
+  color: #ffffff;
+}
+/* <!-- правая сторона 3 игры --> */
+.right_flex_third_game {
+  display: flex;
+  flex-direction: column;
+  gap: 2;
+  width: 42vw;
+  height: 36vw;
+}
+.text_third_game {
+  width: 42vw;
+  height: 16vw;
+  background-image: url(../static/images/msg3.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 2vw;
+  color: #ff4a8c;
+  padding: 5vw 0vw 0vw 2vw;
+}
+.story {
+  width: 42vw;
+  height: 23vw;
+  background-image: url(../static/images/story.svg);
+  background-repeat: no-repeat;
+  background-size: 168vw;
+  font-size: 2vw;
+}
+
+/* <!------- пиксельный переход -------> */
+.transition4 {
+  position: relative;
+  width: 100vw;
+  height: 14.9vw;
+}
+.transition4_1 {
+  width: 100vw;
+  height: 15vw;
+  background-image: url('../static/images/line2.svg');
+  background-repeat: no-repeat;
+  background-size: 200vw;
+  animation: animationTransition 1s steps(2) infinite;
+  animation-play-state: running;
+}
+
+/* <!------- 4 игра -------> */
+.forth_game {
+  position: relative;
+  width: 100vw;
+  height: 57vw;
+  background-color: #ffffff;
+}
+.big_flex_forth_game {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  padding: 1.5vw;
+}
+.left_flex_forth_game {
+  width: 44vw;
+  height: 46vw;
+  background-image: url(../static/images/dialoge_screen.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.right_flex_forth_game {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 46vw;
+}
+
+.msg4_button {
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+  height: 15vw;
+  gap: 1vw;
+}
+.msg4 {
+  width: 39vw;
+  height: 14vw;
+  background-image: url(../static/images/msg4.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.msg4 p {
+  font-family: 'Fixedsys';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2vw;
+  color: #45893a;
+  padding-top: 6.3vw;
+  padding-left: 2.5vw;
+}
+.button_questions {
+  width: 7vw;
+  height: 7vw;
+  background-image: url(../static/images/button_questions.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 0.7vw;
+}
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  width: 52vw;
+  height: 35vw;
+  gap: 1vw;
+  background-image: url(../static/images/keyboard.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.top_buttons_forth_game {
+  display: flex;
+  flex-direction: row;
+  width: 48vw;
+  height: 24vw;
+  gap: 0.5vw;
+}
+.part1_top_keyboard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw;
+  height: 21.8vw;
+  width: 34.5vw;
+  gap: 0.2vw;
+  margin: 2.4vw 0 0 1.6vw;
+  background-color: #2e5427;
+}
+.part1_row1,
+.part1_row2,
+.part1_row3,
+.part1_row4,
+.part1_row5 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2vw;
+  width: 29.1vw;
+  height: 4vw;
+}
+.part1_top_keyboard img,
+.part2_top_keyboard img {
+  width: 4vw;
+  height: 4vw;
+}
+.part3_top_keyboard img {
+  width: 6vw;
+  height: 4vw;
+}
+
+.part2_top_keyboard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw;
+  height: 21.8vw;
+  width: 9.2vw;
+  gap: 0.2vw;
+  margin-top: 2.4vw;
+  background-color: #2e5427;
+}
+
+.part2_row1,
+.part2_row2,
+.part2_row3,
+.part2_row4,
+.part2_row5 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2vw;
+  width: 9vw;
+  height: 4vw;
+}
+.part3_top_keyboard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw;
+  height: 21.8vw;
+  width: 7vw;
+  gap: 0.2vw;
+  margin-top: 2.4vw;
+  background-color: #2e5427;
+}
+.part3_row1,
+.part3_row2,
+.part3_row3,
+.part3_row4,
+.part_row5 {
+  display: flex;
+  flex-direction: row;
+  gap: 0.2vw;
+  width: 25vw;
+  height: 4vw;
+}
+
+.bottom_button_forth_game {
+  width: 47vw;
+  height: 5vw;
+}
+.probel {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw 0.5vw 0.5vw 0.3vw;
+  height: 4vw;
+  width: 47.3vw;
+  gap: 0.2vw;
+  margin: 0 0 0 1.6vw;
+  background-color: #2e5427;
+}
+.probel1 {
+  width: 46.6vw;
+  height: 3vw;
+  background-image: url(../static/images/probel.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* <!------- стиражка -------> */
+
+.erase_volrion {
+  display: flex;
+  flex-direction: column;
+  width: 99vw;
+  height: 35vw;
+  gap: 2vw;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #333;
+  font-size: 2vw;
+}
+
+#scratchCanvas {
+  width: 90vw;
+  height: 19vw;
+  cursor: crosshair;
+  background-image: url(../static/images/back_erase.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#resetBtn {
+  font-family: 'Fixedsys';
+  font-size: 2vw;
+  padding: 0.5vw;
+  background: #ffffff;
+  color: #ff4a8c;
+  border: 0.3vw solid #ff4a8c;
+  cursor: pointer;
+}
+
+#resetBtn:hover {
+  background-color: #ff4a8c;
+  color: #ffffff;
+}
+/* <!------- подвал -------> */
+.footer {
+  position: relative;
+  width: 100vw;
+  height: 25vw;
+  background-color: #9ce58f;
+}
+.footer1 {
+  width: 100vw;
+  height: 15vw;
+  background-image: url('../static/images/line.svg');
+  background-repeat: no-repeat;
+  background-size: 200vw;
+  animation: animationTransition 1s steps(2) infinite;
+  animation-play-state: running;
 }

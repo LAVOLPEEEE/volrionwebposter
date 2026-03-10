@@ -234,6 +234,12 @@
       <div class="transition2_1"></div>
     </section>
     <section class="second_game">
+      <img
+        class="alphabet alphabet_hidden"
+        src="static/images/alphabet.svg"
+        alt=""
+      />
+      <div class="close_alphabet"></div>
       <div class="big_flex_second_game">
         <div class="left_flex_second_game">
           <div class="msg_alphabet_button">
@@ -247,38 +253,118 @@
           </div>
           <div class="words_answer">
             <div class="words">
-              <div class="word1"></div>
-              <div class="word2"></div>
-              <div class="word3">
+              <div class="answer_word word1" data-answer_word_number="1">
                 <img
-                  class="letter1_3"
+                  class="dragging_cell"
+                  src="static/images/letter1_1.svg"
+                  alt=""
+                  data-letter="8"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter2_1.svg"
+                  alt=""
+                  data-letter="("
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter3_1.svg"
+                  alt=""
+                  data-letter="{"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter4_1.svg"
+                  alt=""
+                  data-letter="#"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter5_1.svg"
+                  alt=""
+                  data-letter="+"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter6_1.svg"
+                  alt=""
+                  data-letter="#"
+                />
+              </div>
+              <div class="answer_word word2" data-answer_word_number="2">
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter1_2.svg"
+                  alt=""
+                  data-letter="="
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter2_2.svg"
+                  alt=""
+                  data-letter="6"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter3_2.svg"
+                  alt=""
+                  data-letter="%"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter4_2.svg"
+                  alt=""
+                  data-letter="&gt;"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter5_2.svg"
+                  alt=""
+                  data-letter="#"
+                />
+                <img
+                  class="dragging_cell"
+                  src="static/images/letter6_2.svg"
+                  alt=""
+                  data-letter="+"
+                />
+              </div>
+              <div class="answer_word word3" data-answer_word_number="3">
+                <img
+                  class="dragging_cell"
                   src="static/images/letter1_3.svg"
                   alt=""
+                  data-letter="("
                 />
                 <img
-                  class="letter2_3"
+                  class="dragging_cell"
                   src="static/images/letter2_3.svg"
                   alt=""
+                  data-letter="%"
                 />
                 <img
-                  class="letter3_3"
+                  class="dragging_cell"
                   src="static/images/letter3_3.svg"
                   alt=""
+                  data-letter="*"
                 />
                 <img
-                  class="letter4_3"
+                  class="dragging_cell"
                   src="static/images/letter4_3.svg"
                   alt=""
+                  data-letter="&lt;"
                 />
                 <img
-                  class="letter5_3"
+                  class="dragging_cell"
                   src="static/images/letter5_3.svg"
                   alt=""
+                  data-letter="№"
                 />
                 <img
-                  class="letter6_3"
+                  class="dragging_cell"
                   src="static/images/letter6_3.svg"
                   alt=""
+                  data-letter="@"
                 />
               </div>
             </div>
@@ -290,24 +376,114 @@
           </div>
         </div>
         <div class="right_flex_second_game">
-          <img class="letter_о1" src="static/images/letter_o.svg" alt="" />
-          <img class="letter_ye1" src="static/images/letter_ye.svg" alt="" />
-          <img class="letter_t1" src="static/images/letter_t.svg" alt="" />
-          <img class="letter_v1" src="static/images/letter_v.svg" alt="" />
-          <img class="letter_b1" src="static/images/letter_b.svg" alt="" />
-          <img class="letter_k1" src="static/images/letter_k.svg" alt="" />
-          <img class="letter_о2" src="static/images/letter_o.svg" alt="" />
-          <img class="letter_ya1" src="static/images/letter_ya.svg" alt="" />
-          <img class="letter_ts1" src="static/images/letter_ts.svg" alt="" />
-          <img class="letter_b2" src="static/images/letter_b.svg" alt="" />
-          <img class="letter_yo1" src="static/images/letter_yo.svg" alt="" />
-          <img class="letter_z1" src="static/images/letter_z.svg" alt="" />
-          <img class="letter_ye2" src="static/images/letter_ye.svg" alt="" />
-          <img class="letter_a1" src="static/images/letter_a.svg" alt="" />
-          <img class="letter_о3" src="static/images/letter_o.svg" alt="" />
-          <img class="letter_r1" src="static/images/letter_r.svg" alt="" />
-          <img class="letter_l1" src="static/images/letter_l.svg" alt="" />
-          <img class="letter_k2" src="static/images/letter_k.svg" alt="" />
+          <img
+            class="draggable letter_o1"
+            src="static/images/letter_o.svg"
+            alt=""
+            data-letter="#"
+          />
+          <img
+            class="draggable letter_ye1"
+            src="static/images/letter_ye.svg"
+            alt=""
+            data-letter="%"
+          />
+          <img
+            class="draggable letter_t1"
+            src="static/images/letter_t.svg"
+            alt=""
+            data-letter="&gt;"
+          />
+          <img
+            class="draggable letter_v1"
+            src="static/images/letter_v.svg"
+            alt=""
+            data-letter="6"
+          />
+          <img
+            class="draggable letter_b1"
+            src="static/images/letter_b.svg"
+            alt=""
+            data-letter="("
+          />
+          <img
+            class="draggable letter_k1"
+            src="static/images/letter_k.svg"
+            alt=""
+            data-letter="+"
+          />
+          <img
+            class="draggable letter_o2"
+            src="static/images/letter_o.svg"
+            alt=""
+            data-letter="#"
+          />
+          <img
+            class="draggable letter_ya1"
+            src="static/images/letter_ya.svg"
+            alt=""
+            data-letter="8"
+          />
+          <img
+            class="draggable letter_ts1"
+            src="static/images/letter_ts.svg"
+            alt=""
+            data-letter="="
+          />
+          <img
+            class="draggable letter_b2"
+            src="static/images/letter_b.svg"
+            alt=""
+            data-letter="("
+          />
+          <img
+            class="draggable letter_yo1"
+            src="static/images/letter_yo.svg"
+            alt=""
+            data-letter="&lt;"
+          />
+          <img
+            class="draggable letter_z1"
+            src="static/images/letter_z.svg"
+            alt=""
+            data-letter="№"
+          />
+          <img
+            class="draggable letter_ye2"
+            src="static/images/letter_ye.svg"
+            alt=""
+            data-letter="%"
+          />
+          <img
+            class="draggable letter_a1"
+            src="static/images/letter_a.svg"
+            alt=""
+            data-letter="@"
+          />
+          <img
+            class="draggable letter_o3"
+            src="static/images/letter_o.svg"
+            alt=""
+            data-letter="#"
+          />
+          <img
+            class="draggable letter_r1"
+            src="static/images/letter_r.svg"
+            alt=""
+            data-letter="*"
+          />
+          <img
+            class="draggable letter_l1"
+            src="static/images/letter_l.svg"
+            alt=""
+            data-letter="{"
+          />
+          <img
+            class="draggable letter_k2"
+            src="static/images/letter_k.svg"
+            alt=""
+            data-letter="+"
+          />
         </div>
       </div>
     </section>
@@ -315,11 +491,360 @@
       <div class="transition3_1"></div>
     </section>
     <section class="third_game">
-      <div class="big_flex_third_game"></div>
+      <div class="big_flex_third_game">
+        <div class="left_flex_third_game">
+          <div id="quiz-container">
+            <div class="question-container">
+              <h2 class="question-number">
+                Вопрос <span id="question-number">1</span> из 3
+              </h2>
+              <p id="question-text" class="question-text"></p>
+              <div id="options" class="options"></div>
+            </div>
+            <div id="result" class="result" style="display: none">
+              Вы ответили правильно на <span id="score">0</span> из
+              <span id="total">3</span> вопросов!
+            </div>
+            <button id="next-btn" style="display: none">
+              Следующий вопрос
+            </button>
+            <button id="restart-btn" style="display: none">
+              Пройти заново
+            </button>
+          </div>
+        </div>
+        <div class="right_flex_third_game">
+          <div class="text_third_game">
+            <p>
+              Заполни пропуски <br />в инопланетном письме. <br />Выбирай из
+              изученных слов!
+            </p>
+          </div>
+          <div class="story"></div>
+        </div>
+      </div>
     </section>
+    <section class="transition4">
+      <div class="transition4_1"></div>
+    </section>
+    <section class="forth_game">
+      <div class="big_flex_forth_game">
+        <div class="left_flex_forth_game"></div>
+        <div class="right_flex_forth_game">
+          <div class="msg4_button">
+            <div class="msg4">
+              <p>
+                Введи сообщение и заводи новые <br />знакомства с другими
+                существами!
+              </p>
+            </div>
+            <div class="button_questions"></div>
+          </div>
+          <div class="keyboard">
+            <div class="top_buttons_forth_game">
+              <div class="part1_top_keyboard">
+                <div class="part1_row1">
+                  <img
+                    class="row1_letter_a"
+                    src="static/images/letter_a1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_b"
+                    src="static/images/letter_b1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_v"
+                    src="static/images/letter_v1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_g"
+                    src="static/images/letter_g1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_d"
+                    src="static/images/letter_d1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_ye"
+                    src="static/images/letter_ye1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_yo"
+                    src="static/images/letter_yo1.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part1_row2">
+                  <img
+                    class="row1_letter_zh"
+                    src="static/images/letter_zh1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_z"
+                    src="static/images/letter_z1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_i"
+                    src="static/images/letter_i1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_yi"
+                    src="static/images/letter_yi1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_k"
+                    src="static/images/letter_k1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_l"
+                    src="static/images/letter_l1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_m"
+                    src="static/images/letter_m1.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part1_row3">
+                  <img
+                    class="row1_letter_n"
+                    src="static/images/letter_n1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_o"
+                    src="static/images/letter_o1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_p"
+                    src="static/images/letter_p1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_r"
+                    src="static/images/letter_r1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_s"
+                    src="static/images/letter_s1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_t"
+                    src="static/images/letter_t1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_u"
+                    src="static/images/letter_u1.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part1_row4">
+                  <img
+                    class="row1_letter_f"
+                    src="static/images/letter_f1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_h"
+                    src="static/images/letter_h1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_ts"
+                    src="static/images/letter_ts1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_ch"
+                    src="static/images/letter_ch1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_sh"
+                    src="static/images/letter_sh1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_ch"
+                    src="static/images/letter_shch1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_11"
+                    src="static/images/letter_11.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part1_row5">
+                  <img
+                    class="row1_letter_y"
+                    src="static/images/letter_y1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_111"
+                    src="static/images/letter_111.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_e"
+                    src="static/images/letter_e1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_yu"
+                    src="static/images/letter_yu1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_ya"
+                    src="static/images/letter_ya1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_dot"
+                    src="static/images/letter_dot1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_letter_comma"
+                    src="static/images/letter_comma1.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="part2_top_keyboard">
+                <div class="part2_row1">
+                  <img
+                    class="row1_number_1"
+                    src="static/images/number_1.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_number_6"
+                    src="static/images/number_6.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part2_row2">
+                  <img
+                    class="row1_number_2"
+                    src="static/images/number_2.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_number_7"
+                    src="static/images/number_7.svg"
+                    alt=""
+                  />
+                  <div class="row1_letter_a"></div>
+                </div>
+                <div class="part2_row3">
+                  <img
+                    class="row1_number_3"
+                    src="static/images/number_3.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_number_8"
+                    src="static/images/number_8.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part2_row4">
+                  <img
+                    class="row1_number_4"
+                    src="static/images/number_4.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_number_9"
+                    src="static/images/number_9.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="part2_row5">
+                  <img
+                    class="row1_number_5"
+                    src="static/images/number_5.svg"
+                    alt=""
+                  />
+                  <img
+                    class="row1_number_0"
+                    src="static/images/number_0.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="part3_top_keyboard">
+                <img
+                  class="row1_delete"
+                  src="static/images/delete.svg"
+                  alt=""
+                />
+                <img
+                  class="row1_return"
+                  src="static/images/return.svg"
+                  alt=""
+                />
+                <img
+                  class="row1_CapsLock"
+                  src="static/images/CapsLock.svg"
+                  alt=""
+                />
+                <img
+                  class="row1_letter_question"
+                  src="static/images/letter_question.svg"
+                  alt=""
+                />
+                <img
+                  class="row1_letter_!"
+                  src="static/images/letter_!.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bottom_button_forth_game">
+              <div class="probel">
+                <div class="probel1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="erase_volrion">
+      <h1>Стирайте, чтобы увидеть секрет!</h1>
+      <canvas id="scratchCanvas" width="100" height="20"></canvas>
+      <button id="resetBtn">Сбросить</button>
+    </section>
+    <section class="footer">
+      <div class="footer1"></div>
+    </section>
+
     <script src="javascripts/model.js"></script>
     <script src="javascripts/letters.js"></script>
     <script src="javascripts/alphabet.js"></script>
     <script src="javascripts/first_game.js"></script>
+    <script src="javascripts/second_game.js"></script>
+    <script src="javascripts/third_game.js"></script>
+    <script src="javascripts/forth_game.js"></script>
+    <script src="javascripts/erase.js"></script>
   </body>
 </html>
