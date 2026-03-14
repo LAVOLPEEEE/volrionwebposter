@@ -19,6 +19,11 @@ function makeDraggableElement(element) {
     e.preventDefault()
     e.stopPropagation()
 
+    const alph = document.querySelector('.alphabet')
+    if (!alph.classList.contains('alphabet_hidden')) {
+      alph.classList.add('alphabet_hidden')
+    }
+
     isDragging = true
     element.style.zIndex = draggableZIndex
     draggingLetter = e
@@ -77,6 +82,7 @@ function makeDraggableElement(element) {
         setWrongPicture(cell)
       }
     } else if (cell && cell.classList.contains('right_flex_second_game')) {
+      // TODO вот тут -1 и -0 нужно менять, чтобы после неудачной попытки не двигались буквы
       element.style.left = toVw(currentPositionX, -1)
       element.style.top = toVw(currentPositionY, 0)
     }
@@ -137,6 +143,12 @@ document.addEventListener('DOMContentLoaded', () => {
 function showAlphabet(e) {
   e.stopPropagation()
   const alph = document.querySelector('.alphabet')
+  if (!alph.classList.contains('alphabet_hidden')) {
+    alph.classList.add('alphabet_hidden')
+
+    return
+  }
+
   alph.classList.remove('alphabet_hidden')
 
   document.addEventListener(

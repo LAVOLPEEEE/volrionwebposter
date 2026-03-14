@@ -36,13 +36,32 @@ body {
   left: 7.5vw;
   top: 1vw;
   z-index: -1;
-  animation: changeLettersAnimation 2.5s linear infinite;
 }
+
+.animated-text1 {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-text1::before {
+  content: '!@#$%^&*';
+  animation: changeLettersAnimation1 3s linear infinite;
+}
+
 .big-overlay-text-bottom {
   position: absolute;
   left: 29vw;
   top: 32vw;
   z-index: -1;
+}
+.animated-text2 {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-text2::before {
+  content: '%^&*';
+  animation: changeLettersAnimation2 3s linear infinite;
 }
 
 .letters {
@@ -423,7 +442,7 @@ body {
   width: 70vw;
   height: auto;
   margin-left: 15vw;
-  margin-top: 4vw;
+  margin-top: 7.7vw;
 }
 
 .alphabet_hidden {
@@ -436,7 +455,7 @@ body {
   width: 3.6vw;
   height: 3.6vw;
   margin-left: 16.5vw;
-  margin-top: 5.5vw;
+  margin-top: 9.2vw;
 }
 
 .big_flex_second_game {
@@ -848,7 +867,7 @@ button:hover {
 .forth_game {
   position: relative;
   width: 100vw;
-  height: 57vw;
+  height: 53vw;
   background-color: #ffffff;
 }
 .big_flex_forth_game {
@@ -865,11 +884,93 @@ button:hover {
   background-size: contain;
 }
 
+.key {
+  transition: 0.15s;
+}
+
+.key_pressed {
+  scale: 0.8;
+}
+
+.messages_container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 6vw 5vw;
+}
+
+.messages {
+  height: 85%;
+  width: auto;
+  border: solid;
+  border-color: black;
+  overflow-y: auto;
+  margin-bottom: 0.5vw;
+  padding: 1vw;
+}
+
+.messages-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+.message_input {
+  display: flex;
+  padding: 0.5vw;
+  height: 15%;
+  border: solid;
+  border-color: black;
+}
+
+.message_input_bar {
+  font-size: 2.2vw;
+  width: 100%;
+  border: none;
+}
+
+.message {
+  font-size: 3vw;
+  border: 1px solid;
+  border-radius: 15px;
+}
+
+.message.user {
+  background: lightblue;
+  align-self: flex-end;
+}
+
+.message.bot {
+  background: beige;
+  align-self: flex-start;
+}
+
 .right_flex_forth_game {
   display: flex;
   flex-direction: column;
   width: 50vw;
   height: 46vw;
+}
+
+.questions {
+  position: absolute;
+  z-index: 100;
+  width: 70vw;
+  height: auto;
+  margin-left: 15vw;
+  margin-top: 2vw;
+}
+.questions_hidden {
+  display: none;
+}
+.close_questions {
+  position: absolute;
+  z-index: 110;
+  width: 3.6vw;
+  height: 3.6vw;
+  margin-left: 16.5vw;
+  margin-top: 3.5vw;
 }
 
 .msg4_button {
@@ -1032,13 +1133,13 @@ button:hover {
 }
 
 h1 {
-  color: #333;
-  font-size: 2vw;
+  color: #ff4a8c;
+  font-size: 3vw;
 }
 
 #scratchCanvas {
-  width: 90vw;
-  height: 19vw;
+  width: 93vw;
+  height: 20vw;
   cursor: crosshair;
   background-image: url(../static/images/back_erase.svg);
   background-repeat: no-repeat;
@@ -1059,19 +1160,51 @@ h1 {
   background-color: #ff4a8c;
   color: #ffffff;
 }
-/* <!------- подвал -------> */
-.footer {
+/* <!------- подвал покажровая анимация -------> */
+.footer_transition {
   position: relative;
   width: 100vw;
-  height: 25vw;
-  background-color: #9ce58f;
+  height: 15vw;
+  background-color: #ffd9e7;
 }
 .footer1 {
   width: 100vw;
   height: 15vw;
-  background-image: url('../static/images/line.svg');
+  background-image: url('../static/images/line3.svg');
   background-repeat: no-repeat;
   background-size: 200vw;
   animation: animationTransition 1s steps(2) infinite;
   animation-play-state: running;
+}
+/* <!------- подвал -------> */
+.footer {
+  position: relative;
+  width: 100vw;
+  height: 6vw;
+  background-color: #ffd9e7;
+}
+.names {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5vw;
+  width: 100vw;
+  height: 5vw;
+  gap: 0.6vw;
+}
+.names p {
+  padding-top: 0.9vw;
+  font-family: 'Fixedsys';
+  font-size: 2vw;
+  color: #ffffff;
+  text-align: center;
+}
+.name1,
+.name2,
+.name3,
+.name4 {
+  width: 24vw;
+  height: 4vw;
+  background-image: url(../static/images/background_for_names.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

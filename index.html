@@ -4,16 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3D Модель с анимацией</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.139.0/build/three.module.js",
+          "OrbitControls": "https://unpkg.com/three@0.139.0/examples/jsm/controls/OrbitControls.js",
+          "GLTFLoader": "https://unpkg.com/three@0.139.0/examples/jsm/loaders/GLTFLoader.js",
+          "RectAreaLightUniformsLib": "https://unpkg.com/three@0.139.0/examples/jsm/lights/RectAreaLightUniformsLib.js"
+        }
+      }
+    </script>
+    <script defer src="javascripts/model.js" type="module"></script>
   </head>
   <body>
     <section>
       <div class="scene">
         <canvas id="canvas"></canvas>
         <div class="big-overlay-texts">
-          <div class="big-overlay-text-top">разгадай</div>
-          <div class="big-overlay-text-bottom">меня</div>
+          <div class="big-overlay-text-top">
+            <span class="animated-text1"></span>
+          </div>
+          <div class="big-overlay-text-bottom">
+            <span class="animated-text2"></span>
+          </div>
         </div>
         <div class="letters">
           <span class="toh letter1">#</span>
@@ -528,8 +541,28 @@
       <div class="transition4_1"></div>
     </section>
     <section class="forth_game">
+      <img
+        class="questions questions_hidden"
+        src="static/images/alphabet.svg"
+        alt=""
+      />
+      <div class="close_questions"></div>
       <div class="big_flex_forth_game">
-        <div class="left_flex_forth_game"></div>
+        <div class="left_flex_forth_game">
+          <div class="messages_container">
+            <div class="messages" id="messages"></div>
+            <div class="message_input">
+              <input
+                class="message_input_bar"
+                id="message_input"
+                type="text"
+                maxlength="50"
+                placeholder="Введите сообщение"
+                data-originalru=""
+              />
+            </div>
+          </div>
+        </div>
         <div class="right_flex_forth_game">
           <div class="msg4_button">
             <div class="msg4">
@@ -545,278 +578,325 @@
               <div class="part1_top_keyboard">
                 <div class="part1_row1">
                   <img
-                    class="row1_letter_a"
+                    class="key row1_letter_a"
                     src="static/images/letter_a1.svg"
                     alt=""
+                    data-letter="а"
                   />
                   <img
-                    class="row1_letter_b"
+                    class="key row1_letter_b"
                     src="static/images/letter_b1.svg"
                     alt=""
+                    data-letter="б"
                   />
                   <img
-                    class="row1_letter_v"
+                    class="key row1_letter_v"
                     src="static/images/letter_v1.svg"
                     alt=""
+                    data-letter="в"
                   />
                   <img
-                    class="row1_letter_g"
+                    class="key row1_letter_g"
                     src="static/images/letter_g1.svg"
                     alt=""
+                    data-letter="г"
                   />
                   <img
-                    class="row1_letter_d"
+                    class="key row1_letter_d"
                     src="static/images/letter_d1.svg"
                     alt=""
+                    data-letter="д"
                   />
                   <img
-                    class="row1_letter_ye"
+                    class="key row1_letter_ye"
                     src="static/images/letter_ye1.svg"
                     alt=""
+                    data-letter="е"
                   />
                   <img
-                    class="row1_letter_yo"
+                    class="key row1_letter_yo"
                     src="static/images/letter_yo1.svg"
                     alt=""
+                    data-letter="ё"
                   />
                 </div>
                 <div class="part1_row2">
                   <img
-                    class="row1_letter_zh"
+                    class="key row1_letter_zh"
                     src="static/images/letter_zh1.svg"
                     alt=""
+                    data-letter="ж"
                   />
                   <img
-                    class="row1_letter_z"
+                    class="key row1_letter_z"
                     src="static/images/letter_z1.svg"
                     alt=""
+                    data-letter="з"
                   />
                   <img
-                    class="row1_letter_i"
+                    class="key row1_letter_i"
                     src="static/images/letter_i1.svg"
                     alt=""
+                    data-letter="и"
                   />
                   <img
-                    class="row1_letter_yi"
+                    class="key row1_letter_yi"
                     src="static/images/letter_yi1.svg"
                     alt=""
+                    data-letter="й"
                   />
                   <img
-                    class="row1_letter_k"
+                    class="key row1_letter_k"
                     src="static/images/letter_k1.svg"
                     alt=""
+                    data-letter="к"
                   />
                   <img
-                    class="row1_letter_l"
+                    class="key row1_letter_l"
                     src="static/images/letter_l1.svg"
                     alt=""
+                    data-letter="л"
                   />
                   <img
-                    class="row1_letter_m"
+                    class="key row1_letter_m"
                     src="static/images/letter_m1.svg"
                     alt=""
+                    data-letter="м"
                   />
                 </div>
                 <div class="part1_row3">
                   <img
-                    class="row1_letter_n"
+                    class="key row1_letter_n"
                     src="static/images/letter_n1.svg"
                     alt=""
+                    data-letter="н"
                   />
                   <img
-                    class="row1_letter_o"
+                    class="key row1_letter_o"
                     src="static/images/letter_o1.svg"
                     alt=""
+                    data-letter="о"
                   />
                   <img
-                    class="row1_letter_p"
+                    class="key row1_letter_p"
                     src="static/images/letter_p1.svg"
                     alt=""
+                    data-letter="п"
                   />
                   <img
-                    class="row1_letter_r"
+                    class="key row1_letter_r"
                     src="static/images/letter_r1.svg"
                     alt=""
+                    data-letter="р"
                   />
                   <img
-                    class="row1_letter_s"
+                    class="key row1_letter_s"
                     src="static/images/letter_s1.svg"
                     alt=""
+                    data-letter="с"
                   />
                   <img
-                    class="row1_letter_t"
+                    class="key row1_letter_t"
                     src="static/images/letter_t1.svg"
                     alt=""
+                    data-letter="т"
                   />
                   <img
-                    class="row1_letter_u"
+                    class="key row1_letter_u"
                     src="static/images/letter_u1.svg"
                     alt=""
+                    data-letter="у"
                   />
                 </div>
                 <div class="part1_row4">
                   <img
-                    class="row1_letter_f"
+                    class="key row1_letter_f"
                     src="static/images/letter_f1.svg"
                     alt=""
+                    data-letter="ф"
                   />
                   <img
-                    class="row1_letter_h"
+                    class="key row1_letter_h"
                     src="static/images/letter_h1.svg"
                     alt=""
+                    data-letter="х"
                   />
                   <img
-                    class="row1_letter_ts"
+                    class="key row1_letter_ts"
                     src="static/images/letter_ts1.svg"
                     alt=""
+                    data-letter="ц"
                   />
                   <img
-                    class="row1_letter_ch"
+                    class="key row1_letter_ch"
                     src="static/images/letter_ch1.svg"
                     alt=""
+                    data-letter="ч"
                   />
                   <img
-                    class="row1_letter_sh"
+                    class="key row1_letter_sh"
                     src="static/images/letter_sh1.svg"
                     alt=""
+                    data-letter="ш"
                   />
                   <img
-                    class="row1_letter_ch"
+                    class="key row1_letter_ch"
                     src="static/images/letter_shch1.svg"
                     alt=""
+                    data-letter="щ"
                   />
                   <img
-                    class="row1_letter_11"
+                    class="key row1_letter_11"
                     src="static/images/letter_11.svg"
                     alt=""
+                    data-letter="ъ"
                   />
                 </div>
                 <div class="part1_row5">
                   <img
-                    class="row1_letter_y"
+                    class="key row1_letter_y"
                     src="static/images/letter_y1.svg"
                     alt=""
+                    data-letter="ы"
                   />
                   <img
-                    class="row1_letter_111"
+                    class="key row1_letter_111"
                     src="static/images/letter_111.svg"
                     alt=""
+                    data-letter="ь"
                   />
                   <img
-                    class="row1_letter_e"
+                    class="key row1_letter_e"
                     src="static/images/letter_e1.svg"
                     alt=""
+                    data-letter="э"
                   />
                   <img
-                    class="row1_letter_yu"
+                    class="key row1_letter_yu"
                     src="static/images/letter_yu1.svg"
                     alt=""
+                    data-letter="ю"
                   />
                   <img
-                    class="row1_letter_ya"
+                    class="key row1_letter_ya"
                     src="static/images/letter_ya1.svg"
                     alt=""
+                    data-letter="я"
                   />
                   <img
-                    class="row1_letter_dot"
+                    class="key row1_letter_dot"
                     src="static/images/letter_dot1.svg"
                     alt=""
+                    data-letter="."
                   />
                   <img
-                    class="row1_letter_comma"
+                    class="key row1_letter_comma"
                     src="static/images/letter_comma1.svg"
                     alt=""
+                    data-letter=","
                   />
                 </div>
               </div>
               <div class="part2_top_keyboard">
                 <div class="part2_row1">
                   <img
-                    class="row1_number_1"
+                    class="key row1_number_1"
                     src="static/images/number_1.svg"
                     alt=""
+                    data-letter="1"
                   />
                   <img
-                    class="row1_number_6"
+                    class="key row1_number_6"
                     src="static/images/number_6.svg"
                     alt=""
+                    data-letter="6"
                   />
                 </div>
                 <div class="part2_row2">
                   <img
-                    class="row1_number_2"
+                    class="key row1_number_2"
                     src="static/images/number_2.svg"
                     alt=""
+                    data-letter="2"
                   />
                   <img
-                    class="row1_number_7"
+                    class="key row1_number_7"
                     src="static/images/number_7.svg"
                     alt=""
+                    data-letter="7"
                   />
-                  <div class="row1_letter_a"></div>
+                  <div class="key row1_letter_a"></div>
                 </div>
                 <div class="part2_row3">
                   <img
-                    class="row1_number_3"
+                    class="key row1_number_3"
                     src="static/images/number_3.svg"
                     alt=""
+                    data-letter="3"
                   />
                   <img
-                    class="row1_number_8"
+                    class="key row1_number_8"
                     src="static/images/number_8.svg"
                     alt=""
+                    data-letter="8"
                   />
                 </div>
                 <div class="part2_row4">
                   <img
-                    class="row1_number_4"
+                    class="key row1_number_4"
                     src="static/images/number_4.svg"
                     alt=""
+                    data-letter="4"
                   />
                   <img
-                    class="row1_number_9"
+                    class="key row1_number_9"
                     src="static/images/number_9.svg"
                     alt=""
+                    data-letter="9"
                   />
                 </div>
                 <div class="part2_row5">
                   <img
-                    class="row1_number_5"
+                    class="key row1_number_5"
                     src="static/images/number_5.svg"
                     alt=""
+                    data-letter="5"
                   />
                   <img
-                    class="row1_number_0"
+                    class="key row1_number_0"
                     src="static/images/number_0.svg"
                     alt=""
+                    data-letter="0"
                   />
                 </div>
               </div>
               <div class="part3_top_keyboard">
                 <img
-                  class="row1_delete"
-                  src="static/images/delete.svg"
-                  alt=""
-                />
-                <img
-                  class="row1_return"
+                  class="key row1_return"
                   src="static/images/return.svg"
                   alt=""
                 />
                 <img
-                  class="row1_CapsLock"
+                  class="key row1_left"
+                  src="static/images/delete.svg"
+                  alt=""
+                />
+                <img
+                  class="key row1_right"
                   src="static/images/CapsLock.svg"
                   alt=""
                 />
                 <img
-                  class="row1_letter_question"
+                  class="key row1_letter_question"
                   src="static/images/letter_question.svg"
                   alt=""
+                  data-letter="?"
                 />
                 <img
-                  class="row1_letter_!"
+                  class="key row1_letter_!"
                   src="static/images/letter_!.svg"
                   alt=""
+                  data-letter="!"
                 />
               </div>
             </div>
@@ -830,14 +910,29 @@
       </div>
     </section>
     <section class="erase_volrion">
-      <h1>Стирайте, чтобы увидеть секрет!</h1>
+      <h1>Сотри верхний слой, чтобы увидеть секрет!</h1>
       <canvas id="scratchCanvas" width="100" height="20"></canvas>
       <button id="resetBtn">Сбросить</button>
     </section>
-    <section class="footer">
+    <section class="footer_transition">
       <div class="footer1"></div>
+      <section class="footer">
+        <div class="names">
+          <div class="name1">
+            <p>Б25ДЗ09</p>
+          </div>
+          <div class="name2">
+            <p>Климова Полина</p>
+          </div>
+          <div class="name3">
+            <p>Анна Комкова</p>
+          </div>
+          <div class="name4">
+            <p>Дарья Зародина</p>
+          </div>
+        </div>
+      </section>
     </section>
-
     <script src="javascripts/model.js"></script>
     <script src="javascripts/letters.js"></script>
     <script src="javascripts/alphabet.js"></script>
@@ -846,5 +941,6 @@
     <script src="javascripts/third_game.js"></script>
     <script src="javascripts/forth_game.js"></script>
     <script src="javascripts/erase.js"></script>
+    <script src="javascripts/questions.js"></script>
   </body>
 </html>

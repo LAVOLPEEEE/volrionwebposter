@@ -13,15 +13,105 @@
   }
 }
 
-@keyframes changeLettersAnimation {
+@keyframes changeLettersAnimation1 {
   0% {
-    content: '&**@^%@@';
+    content: '%^&*#@#%';
   }
   4% {
-    content: '&**(^%@@';
+    content: '$^&*$#!(';
+  }
+  8% {
+    content: '&*#$?!@&';
+  }
+  12% {
+    content: '!@#$%^&*';
+  }
+  16% {
+    content: '#@#$%^&*';
+  }
+  20% {
+    content: '^&*>#%&';
+  }
+  24% {
+    content: '%^&*#@#$';
+  }
+  28% {
+    content: '@^&*№!!';
+  }
+  32% {
+    content: 'р%!"$!^&';
+  }
+  36% {
+    content: 'ра@#$%^&';
+  }
+  40% {
+    content: 'раз#$%^&';
+  }
+  44% {
+    content: 'разг%^*!';
+  }
+  48% {
+    content: 'разго%^&';
+  }
+  52% {
+    content: 'разгад&*';
+  }
+  56% {
+    content: 'разгада!';
+  }
+  60% {
+    content: 'разгадай';
   }
   100% {
     content: 'разгадай';
+  }
+}
+@keyframes changeLettersAnimation2 {
+  0% {
+    content: '!@#$';
+  }
+  4% {
+    content: '$%&!';
+  }
+  8% {
+    content: '$%^@';
+  }
+  12% {
+    content: '$%@$';
+  }
+  16% {
+    content: '%^@#';
+  }
+  20% {
+    content: '&@#%';
+  }
+  24% {
+    content: '#$%^';
+  }
+  28% {
+    content: 'с&';
+  }
+  32% {
+    content: '#$%^';
+  }
+  36% {
+    content: '$%^$';
+  }
+  40% {
+    content: 'м%^$';
+  }
+  44% {
+    content: 'ме%^';
+  }
+  48% {
+    content: 'мен!';
+  }
+  52% {
+    content: 'меня';
+  }
+  52%,
+  100% {
+    content: 'меня';
   }
 }
 
