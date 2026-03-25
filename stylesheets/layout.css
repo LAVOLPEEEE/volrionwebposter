@@ -19,9 +19,12 @@ body {
   height: 55vw;
 }
 
-#canvas {
-  width: 100%;
-  height: 100%;
+.canvas {
+  position: absolute;
+  top: 7vw;
+  left: 33vw;
+  width: 35%;
+  height: 75%;
   display: block;
   background: transparent;
   z-index: 1;
@@ -101,8 +104,8 @@ body {
   left: 18vw;
 }
 .letter2 {
-  top: 4vw;
-  left: 42vw;
+  top: 2vw;
+  left: 40vw;
 }
 .letter3 {
   top: 1.5vw;
@@ -193,7 +196,7 @@ body {
 .first_game {
   position: relative;
   width: 100vw;
-  height: 60vw;
+  height: 20%;
   background-color: #9ce58f;
 }
 .big_flex_first_game {
@@ -250,8 +253,6 @@ body {
   background-image: url('../static/images/progressbar.svg');
   background-size: 116vw;
   background-repeat: no-repeat;
-  /* animation: animationProgressBarChange 10s steps(2) infinite;
-  animation-play-state: running; */
 }
 
 /* правая сторона флекса */
@@ -432,7 +433,7 @@ body {
 .second_game {
   position: relative;
   width: 100vw;
-  height: 60vw;
+  height: 10%;
   background-color: #ffffff;
 }
 
@@ -470,7 +471,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 49vw;
-  height: 60vw;
+  height: 54vw;
 }
 .msg_alphabet_button {
   display: flex;
@@ -508,7 +509,7 @@ body {
   flex-direction: row;
   gap: 1vw;
   width: 49vw;
-  height: 34vw;
+  height: 40vw;
 }
 .words {
   display: flex;

@@ -1,0 +1,67 @@
+@media (max-width: 450px) {
+  /* первая игра */
+  .big_flex_first_game {
+    flex-direction: column;
+    width: 50vw;
+  }
+
+  .left_flex_first_game,
+  .right_flex_first_game {
+    width: 46vw;
+    height: auto;
+  }
+  .line_keyboard_1 {
+    position: absolute;
+    width: 42.9vw;
+    height: 2vw;
+    top: 71.5vw;
+    left: 3.7vw;
+    z-index: 3;
+  }
+  .line_keyboard_2 {
+    position: absolute;
+    width: 43vw;
+    height: 3vw;
+    top: 78.7vw;
+    left: 4vw;
+    z-index: 3;
+  }
+  .line_keyboard_3 {
+    position: absolute;
+    width: 42.9vw;
+    height: 2vw;
+    top: 99.2vw;
+    left: 3.6vw;
+    z-index: 3;
+  }
+  .line_keyboard_4 {
+    position: absolute;
+    width: 43vw;
+    height: 3vw;
+    top: 106.2vw;
+    left: 4.09vw;
+    z-index: 3;
+  }
+
+  /* вторая игра */
+  .big_flex_second_game {
+    flex-direction: column;
+    gap: 1vw;
+    padding: 3vw;
+  }
+
+  .left_flex_second_game,
+  .right_flex_second_game {
+    width: 100%;
+    height: auto;
+  }
+
+  .left_flex_second_game {
+    height: 54vw;
+  }
+
+  .right_flex_second_game {
+    height: 50vw;
+    background-image: url(../static/images/new_conteiner.svg);
+  }
+}
