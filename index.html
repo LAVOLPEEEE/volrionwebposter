@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Модель с анимацией</title>
+    <title>VOLRION</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script type="importmap">
       {
@@ -16,9 +16,17 @@
       }
     </script>
     <script defer src="javascripts/model.js" type="module"></script>
+    <script defer src="javascripts/letters.js"></script>
+    <script defer src="javascripts/alphabet.js"></script>
+    <script defer src="javascripts/first_game.js"></script>
+    <script defer src="javascripts/second_game.js"></script>
+    <script defer src="javascripts/third_game.js"></script>
+    <script defer src="javascripts/forth_game.js"></script>
+    <script defer src="javascripts/erase.js"></script>
+    <script defer src="javascripts/questions.js"></script>
   </head>
   <body>
-    <section>
+    <section class="first_scene">
       <div class="scene">
         <div class="canvas"></div>
         <div class="big-overlay-texts">
@@ -62,10 +70,29 @@
         <div class="left_flex_first_game">
           <div class="text">
             <p id="text_left_top_1">
-              Сопоставь знаки и буквы.  <br />Кликай — услышишь уникальный звук!
+              Сопоставь знаки и буквы. <br /><a
+                href="https://rutube.ru/video/private/e912b01dcc96cec7dd6367eaa5926604/?p=a2lJ5sTY1z7m6NiPKujx2Q"
+                class="click-link"
+                >Кликай</a
+              >
+              — услышишь уникальный звук!
             </p>
           </div>
           <div class="screen_with_progressbar">
+            <img class="hidden_img" src="/static/images/empty.svg" alt="" />
+            <img class="hidden_img" src="/static/images/wrong.svg" alt="" />
+            <img class="hidden_img" src="/static/images/true.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc0.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc10.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc20.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc30.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc40.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc50.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc60.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc70.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc80.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc90.svg" alt="" />
+            <img class="hidden_img" src="/static/images/proc100.svg" alt="" />
             <div class="screen"></div>
             <div class="progressbar"></div>
           </div>
@@ -248,6 +275,9 @@
       <div class="transition2_1"></div>
     </section>
     <section class="second_game">
+      <img class="hidden_img" src="static/images/empty1.svg" alt="" />
+      <img class="hidden_img" src="static/images/true1.svg" alt="" />
+      <img class="hidden_img" src="static/images/wrong1.svg" alt="" />
       <img
         class="alphabet alphabet_hidden"
         src="static/images/alphabet.svg"
@@ -506,6 +536,15 @@
     </section>
     <section class="third_game">
       <div class="big_flex_third_game">
+        <div class="right_flex_third_game">
+          <div class="text_third_game">
+            <p>
+              Заполни пропуски <br />в инопланетном письме. <br />Выбирай из
+              изученных слов!
+            </p>
+          </div>
+          <div class="story"></div>
+        </div>
         <div class="left_flex_third_game">
           <div id="quiz-container">
             <div class="question-container">
@@ -527,15 +566,6 @@
             </button>
           </div>
         </div>
-        <div class="right_flex_third_game">
-          <div class="text_third_game">
-            <p>
-              Заполни пропуски <br />в инопланетном письме. <br />Выбирай из
-              изученных слов!
-            </p>
-          </div>
-          <div class="story"></div>
-        </div>
       </div>
     </section>
     <section class="transition4">
@@ -544,7 +574,7 @@
     <section class="forth_game">
       <img
         class="questions questions_hidden"
-        src="static/images/alphabet.svg"
+        src="static/images/questions_1.svg"
         alt=""
       />
       <div class="close_questions"></div>
@@ -903,7 +933,12 @@
             </div>
             <div class="bottom_button_forth_game">
               <div class="probel">
-                <div class="probel1"></div>
+                <img
+                  class="key probel1"
+                  src="static/images/probel1.svg"
+                  alt=""
+                  data-letter=" "
+                />
               </div>
             </div>
           </div>
@@ -912,8 +947,14 @@
     </section>
     <section class="erase_volrion">
       <h1>Сотри верхний слой, чтобы увидеть секрет!</h1>
-      <canvas id="scratchCanvas" width="100" height="20"></canvas>
+      <canvas id="scratchCanvas"></canvas>
       <button id="resetBtn">Сбросить</button>
+      <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-image"></div>
+          <button id="close-modal">Закрыть</button>
+        </div>
+      </div>
     </section>
     <section class="footer_transition">
       <div class="footer1"></div>
@@ -934,13 +975,5 @@
         </div>
       </section>
     </section>
-    <script src="javascripts/letters.js"></script>
-    <script src="javascripts/alphabet.js"></script>
-    <script src="javascripts/first_game.js"></script>
-    <script src="javascripts/second_game.js"></script>
-    <script src="javascripts/third_game.js"></script>
-    <script src="javascripts/forth_game.js"></script>
-    <script src="javascripts/erase.js"></script>
-    <script src="javascripts/questions.js"></script>
   </body>
 </html>

@@ -5,9 +5,9 @@ let firstButton = null
 
 function updateProgressBar() {
   const progressBar = document.querySelector('.progressbar')
-  const progressBarOffset = -10.55 * successfulPairsCount + 'vw'
+  const progressBarPicture = `url("../static/images/proc${successfulPairsCount}0.svg")`
 
-  progressBar.style.backgroundPositionX = progressBarOffset
+  progressBar.style.backgroundImage = progressBarPicture
 }
 
 function handleButtonClick(button) {
@@ -37,9 +37,9 @@ function playSound(soundUrl) {
 }
 
 function checkPair(secondButton) {
-  const basePictureOffset = 0 + 'vw'
-  const wrongPictureOffset = -33.65 + 'vw'
-  const successfulPictureOffset = -67.3 + 'vw'
+  const basePicture = '../static/images/empty.svg'
+  const wrongPicture = '../static/images/wrong.svg'
+  const successfulPicture = '../static/images/true.svg'
 
   const firstLetter = firstButton.dataset.letter
   const secondLetter = secondButton.dataset.letter
@@ -55,20 +55,20 @@ function checkPair(secondButton) {
     successfulPairsCount++
     updateProgressBar()
 
-    victoryPicture.style.backgroundPositionX = successfulPictureOffset
+    victoryPicture.style.backgroundImage = `url("${successfulPicture}")`
     if (successfulPairsCount < 10) {
       setTimeout(() => {
-        victoryPicture.style.backgroundPositionX = basePictureOffset
+        victoryPicture.style.backgroundImage = `url("${basePicture}")`
       }, PAIR_LETTER_CLICK_ANIMATION_TIME)
     }
   } else {
-    victoryPicture.style.backgroundPositionX = wrongPictureOffset
+    victoryPicture.style.backgroundImage = `url("${wrongPicture}")`
     setTimeout(() => {
       firstButton.classList.remove('button_pressed')
       secondButton.classList.remove('button_pressed')
       firstButton = null
 
-      victoryPicture.style.backgroundPositionX = basePictureOffset
+      victoryPicture.style.backgroundImage = `url("${basePicture}")`
     }, PAIR_LETTER_CLICK_ANIMATION_TIME)
   }
 }

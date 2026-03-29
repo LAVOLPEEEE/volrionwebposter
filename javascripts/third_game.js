@@ -22,12 +22,17 @@ const quizData = [
 ]
 
 let backgroundShift = 0
+let isAdaptive = window.innerWidth < 500
+window.addEventListener('resize', () => {
+  isAdaptive = window.innerWidth < 500
+})
 
 function shiftStoryBackground() {
+  const coef = isAdaptive ? 2.245 : 1
   backgroundShift += 42
   const storyElement = document.querySelector('.story')
   if (storyElement) {
-    storyElement.style.backgroundPosition = `-${backgroundShift}vw 0`
+    storyElement.style.backgroundPosition = `-${backgroundShift * coef}vw 0`
   }
 }
 
@@ -78,13 +83,12 @@ function selectOption(selectedIndex, element) {
     element.classList.add('incorrect')
   }
 
-  // Смещение фона после выбора ответа
-  shiftStoryBackground()
-
   document.getElementById('next-btn').style.display = 'block'
 }
 
 function nextQuestion() {
+  shiftStoryBackground()
+
   currentQuestion++
 
   if (currentQuestion < quizData.length) {
@@ -106,7 +110,7 @@ function showResult() {
 function restartQuiz() {
   currentQuestion = 0
   score = 0
-  resetStoryBackground() // Сброс фона в начальное положение
+  resetStoryBackground()
   document.querySelector('.question-container').style.display = 'block'
   document.getElementById('result').style.display = 'none'
   document.getElementById('restart-btn').style.display = 'none'

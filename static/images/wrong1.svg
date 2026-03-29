@@ -1,0 +1,22 @@
+<svg width="113" height="124" viewBox="0 0 113 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="16" y="92" width="59" height="6" transform="rotate(-90 16 92)" fill="#7C7C7C"/>
+<rect x="81" y="92" width="59" height="6" transform="rotate(-90 81 92)" fill="#9C9C9C"/>
+<rect x="22" y="92" width="59" height="6" fill="#7C7C7C"/>
+<rect x="22" y="27" width="59" height="6" fill="#9C9C9C"/>
+<rect x="96" y="101" width="78" height="6" transform="rotate(-90 96 101)" fill="#CCCCCC"/>
+<rect y="101" width="78" height="6" transform="rotate(-90 0 101)" fill="#CCCCCC"/>
+<rect x="12" y="107" width="78" height="6" fill="#CCCCCC"/>
+<rect x="12" y="11" width="78" height="6" fill="#CCCCCC"/>
+<rect x="90" y="17" width="6" height="6" fill="#CCCCCC"/>
+<rect x="90" y="101" width="6" height="6" fill="#CCCCCC"/>
+<rect x="6" y="17" width="6" height="6" fill="#CCCCCC"/>
+<rect x="6" y="101" width="6" height="6" fill="#CCCCCC"/>
+<path d="M65.707 41.6738H71.6279V47.8418H77.3027V76.9541H71.6279V83.1211H65.707V88.7959H36.5957V83.1211H30.6738V76.9541H25V47.8418H30.6738V41.6738H36.5957V36H65.707V41.6738Z" fill="#FF84B1"/>
+<path d="M62.4299 45.8501H67.1584V50.7749H71.6887V74.021H67.1584V78.9458H62.4299V83.4771H39.1838V78.9458H34.4563V74.021H29.925V50.7749H34.4563V45.8501H39.1838V41.3188H62.4299V45.8501Z" fill="#FF4A8C"/>
+<path d="M43.9116 73.4299H39.1841V68.7024H43.9116V73.4299ZM62.4302 73.4299H57.7017V68.7024H62.4302V73.4299ZM48.4429 68.7024H43.9116V64.1711H48.4429V68.7024ZM57.7017 68.7024H53.1714V64.1711H57.7017V68.7024ZM53.1714 64.1711H48.4429V59.4436H53.1714V64.1711ZM48.4429 59.4436H43.9116V54.9124H48.4429V59.4436ZM57.7017 59.4436H53.1714V54.9124H57.7017V59.4436ZM62.4302 54.9124H57.7017V50.1838H62.4302V54.9124ZM43.9116 54.9114H39.1841V50.1838H43.9116V54.9114Z" fill="white"/>
+<rect x="55" y="113" width="11" height="11" fill="#E4E4E4"/>
+<rect x="102" y="90" width="11" height="11" fill="#E4E4E4"/>
+<rect x="67" width="23" height="11" fill="#F5F5F5"/>
+<rect x="12" y="113" width="43" height="11" fill="#F5F5F5"/>
+<rect x="102" y="66" width="43" height="11" transform="rotate(-90 102 66)" fill="#F5F5F5"/>
+</svg>

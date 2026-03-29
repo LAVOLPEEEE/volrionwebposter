@@ -39,7 +39,7 @@ function initThree() {
 
   const loader = new GLTFLoader()
   loader.load(
-    'tv.glb',
+    'static/models/tv.glb',
     function (gltf) {
       scene.add(gltf.scene)
       console.log('Модель загружена успешно')

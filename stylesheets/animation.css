@@ -131,3 +131,11 @@
     background-position-x: -86vw;
   }
 }
+@keyframes animationTransitionText2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -171.9vw;
+  }
+}

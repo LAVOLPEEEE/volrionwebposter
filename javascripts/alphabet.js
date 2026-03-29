@@ -68,6 +68,7 @@ function isEqualLetter(letter1, letter2) {
     return FOREIGN_TO_RU[letter1] === FOREIGN_TO_RU[letter2]
   }
 
+  // если letter1 есть в русском словаре, то берем из русского словаря букву, иначе из иностранного
   let ru1
   if (RU_TO_FOREIGN[letter1]) {
     ru1 = letter1
@@ -75,6 +76,7 @@ function isEqualLetter(letter1, letter2) {
     ru1 = FOREIGN_TO_RU[letter1]
   }
 
+  // если letter1 есть в русском словаре, то берем из русского словаря букву, иначе из иностранного
   let ru2
   if (RU_TO_FOREIGN[letter2]) {
     ru2 = letter2

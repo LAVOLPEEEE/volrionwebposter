@@ -13,7 +13,8 @@ body {
 }
 
 /* первый экран  */
-.scene {
+
+.first_scene {
   position: relative;
   width: 100vw;
   height: 55vw;
@@ -31,7 +32,7 @@ body {
 }
 
 .big-overlay-texts {
-  color: #ff5599;
+  color: #f992bb;
   font-size: 21vw;
 }
 .big-overlay-text-top {
@@ -217,12 +218,12 @@ body {
   padding-bottom: 0.6vw;
 }
 .text {
-  width: 46vw;
+  width: 100%;
   height: 14vw;
   background-image: url('../static/images/msg1.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 5.7vw 2vw 0 2vw;
+  padding: 5.4vw 2vw 0 2vw;
 }
 
 #text_left_top_1 {
@@ -232,6 +233,19 @@ body {
   color: #ff4a8c;
   font-size: 2vw;
 }
+.click-link {
+  font-family: 'Fixedsys';
+  font-weight: normal;
+  font-style: normal;
+  color: #ff4a8c;
+  font-size: 2vw;
+}
+.hidden_img {
+  position: absolute;
+  left: -200%;
+  top: -200%;
+}
+
 .screen_with_progressbar {
   display: flex;
   flex-direction: row;
@@ -239,19 +253,18 @@ body {
   height: 30vw;
 }
 .screen {
-  width: 61vw;
+  width: 78.8%;
   height: 33vw;
-  background-image: url('../static/images/answer_1.svg');
-  background-size: 101vw;
+  background-image: url('../static/images/empty.svg');
+  background-size: cover;
   background-repeat: no-repeat;
-  /* animation: animationScreenChange 10s steps(2) infinite;
-  animation-play-state: running; */
 }
+
 .progressbar {
-  width: 16.9vw;
+  width: 20%;
   height: 31vw;
   background-image: url('../static/images/progressbar.svg');
-  background-size: 116vw;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -269,8 +282,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.5vw;
-  width: 43vw;
-  height: 24vw;
+  width: 100%;
+  height: 41vw;
 }
 .text_right_top {
   width: 43vw;
@@ -294,27 +307,27 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.3vw;
-  width: 45.3vw;
+  width: 100%;
   height: 17.3vw;
   background-image: url('../static/images/background_keyboard.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 1vw 3.65vw 2vw;
+  padding: 1vw 2.55vw 2vw;
 }
 .line_keyboard_1 {
   position: absolute;
-  width: 42.9vw;
+  width: 40.7vw;
   height: 2vw;
-  top: 16.24vw;
-  left: 52.7vw;
+  top: 16vw;
+  left: 54.2vw;
   z-index: 3;
 }
 .line_keyboard_2 {
   position: absolute;
-  width: 43vw;
+  width: 40.7vw;
   height: 3vw;
-  top: 23.4vw;
-  left: 53vw;
+  top: 22.7vw;
+  left: 54.1vw;
   z-index: 3;
 }
 
@@ -347,8 +360,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5vw;
-  width: 43vw;
-  height: 24vw;
+  width: 100%;
+  height: 41vw;
   justify-content: center;
   align-items: center;
 }
@@ -357,12 +370,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.2vw;
-  width: 45.3vw;
+  width: 100%;
   height: 17.3vw;
   background-image: url('../static/images/background_keyboard.svg');
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 1vw 3.65vw 2vw;
+  padding: 1vw 2.55vw 2vw;
 }
 .bottom_keyboard_firstline_buttons {
   display: flex;
@@ -380,18 +393,18 @@ body {
 }
 .line_keyboard_3 {
   position: absolute;
-  width: 42.9vw;
+  width: 40.7vw;
   height: 2vw;
-  top: 43.5vw;
-  left: 52.7vw;
+  top: 43.3vw;
+  left: 54.1vw;
   z-index: 3;
 }
 .line_keyboard_4 {
   position: absolute;
-  width: 43vw;
+  width: 40.7vw;
   height: 3vw;
-  top: 50.6vw;
-  left: 53.09vw;
+  top: 50vw;
+  left: 54.09vw;
   z-index: 3;
 }
 .text_right_bottom {
@@ -462,6 +475,7 @@ body {
 .big_flex_second_game {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 3vw;
   padding: 4vw;
 }
@@ -470,18 +484,19 @@ body {
 .left_flex_second_game {
   display: flex;
   flex-direction: column;
-  width: 49vw;
-  height: 54vw;
+  width: 100%;
+  flex: 1;
 }
 .msg_alphabet_button {
   display: flex;
   flex-direction: row;
-  width: 49vw;
-  height: 14vw;
+  width: 100%;
+  height: auto;
 }
 .msg2 {
-  width: 42vw;
-  height: 14vw;
+  width: 85%;
+  height: auto;
+  aspect-ratio: 3 / 1;
   background-image: url(../static/images/msg2.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -492,13 +507,13 @@ body {
   font-style: normal;
   font-size: 2vw;
   color: #45893a;
-  padding-top: 4.1vw;
-  padding-left: 2.5vw;
+  padding-top: 8%;
+  padding-left: 4%;
 }
 
 .alphabet_button {
-  width: 6vw;
-  height: 6vw;
+  width: 15%;
+  height: auto;
   background-image: url(../static/images/button_alphabet.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -508,33 +523,36 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1vw;
-  width: 49vw;
-  height: 40vw;
+  width: 100%;
+  height: auto;
 }
 .words {
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  width: 39vw;
-  height: 40vw;
+  width: 80%;
+  height: auto;
 }
 .answers {
   display: flex;
   flex-direction: column;
-  gap: 4vw;
-  width: 9vw;
-  height: 40vw;
-  padding-top: 2.9vw;
+  justify-content: space-between;
+  gap: 5%;
+  width: 20%;
+  height: auto;
+  padding-top: 6.2%;
+  padding-bottom: 0.5%;
 }
 .answer_word {
   display: flex;
   flex-direction: row;
-  gap: 1.15vw;
-  width: 39vw;
-  height: 19vw;
-  padding-top: 5.3vw;
-  padding-left: 2vw;
-  background-size: 39vw;
+  gap: 3%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 1;
+  padding-top: 7%;
+  padding-left: 8%;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .word1 {
@@ -548,37 +566,34 @@ body {
 }
 
 .answer_word img {
-  width: 5vw;
-  height: 5vw;
-}
-
-.word3 img {
-  width: 5vw;
-  height: 5vw;
+  width: 13.5%;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 .answer_second_game1,
 .answer_second_game2,
 .answer_second_game3 {
-  width: 9vw;
-  height: 18vw;
-  background-size: 27vw;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .answer_second_game1 {
-  background-image: url(../static/images/answer1_2.svg);
+  background-image: url(../static/images/empty1.svg);
 }
 .answer_second_game2 {
-  background-image: url(../static/images/answer2_2.svg);
+  background-image: url(../static/images/empty1.svg);
 }
 .answer_second_game3 {
-  background-image: url(../static/images/answer3_2.svg);
+  background-image: url(../static/images/empty1.svg);
 }
 /* правая сторона флекса */
 .right_flex_second_game {
   display: flex;
   width: 40vw;
-  height: 60vw;
+  height: auto;
   background-image: url(../static/images/case.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -586,10 +601,12 @@ body {
 
 .right_flex_second_game img {
   position: absolute;
-  width: 5.5vw;
-  height: 5.5vw;
+  width: 5%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   cursor: move;
 }
+
 .draggable {
   position: absolute;
   cursor: grab;
@@ -713,7 +730,7 @@ body {
 .third_game {
   position: relative;
   width: 100vw;
-  height: 40vw;
+  height: 10%;
   background-color: #9ce58f;
 }
 
@@ -868,7 +885,7 @@ button:hover {
 .forth_game {
   position: relative;
   width: 100vw;
-  height: 53vw;
+  height: 20%;
   background-color: #ffffff;
 }
 .big_flex_forth_game {
@@ -904,8 +921,7 @@ button:hover {
 .messages {
   height: 85%;
   width: auto;
-  border: solid;
-  border-color: black;
+  border: 2px solid #2e5427;
   overflow-y: auto;
   margin-bottom: 0.5vw;
   padding: 1vw;
@@ -921,30 +937,38 @@ button:hover {
   display: flex;
   padding: 0.5vw;
   height: 15%;
-  border: solid;
-  border-color: black;
+  border: 2px solid #2e5427;
 }
 
 .message_input_bar {
-  font-size: 2.2vw;
   width: 100%;
   border: none;
+  font-size: 1.5vw;
+  font-family: Fixedsys;
+  font-weight: normal;
+  font-style: normal;
+  padding-right: 1vw;
 }
 
 .message {
-  font-size: 3vw;
-  border: 1px solid;
-  border-radius: 15px;
+  font-size: 2vw;
+  border: 2px solid #2e5427;
 }
 
 .message.user {
-  background: lightblue;
+  background: #2e5427;
   align-self: flex-end;
+  padding: 0.7vw;
+  color: #ffffff;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
 }
 
 .message.bot {
-  background: beige;
+  background: #bcf9b1;
   align-self: flex-start;
+  color: #2e5427;
+  padding: 0.7vw;
 }
 
 .right_flex_forth_game {
@@ -1010,7 +1034,7 @@ button:hover {
   flex-direction: column;
   width: 52vw;
   height: 35vw;
-  gap: 1vw;
+  gap: 0.2vw;
   background-image: url(../static/images/keyboard.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -1029,7 +1053,7 @@ button:hover {
   height: 21.8vw;
   width: 34.5vw;
   gap: 0.2vw;
-  margin: 2.4vw 0 0 1.6vw;
+  margin: 2vw 0 0 1.6vw;
   background-color: #2e5427;
 }
 .part1_row1,
@@ -1060,7 +1084,7 @@ button:hover {
   height: 21.8vw;
   width: 9.2vw;
   gap: 0.2vw;
-  margin-top: 2.4vw;
+  margin-top: 2vw;
   background-color: #2e5427;
 }
 
@@ -1082,9 +1106,10 @@ button:hover {
   height: 21.8vw;
   width: 7vw;
   gap: 0.2vw;
-  margin-top: 2.4vw;
+  margin-top: 2vw;
   background-color: #2e5427;
 }
+
 .part3_row1,
 .part3_row2,
 .part3_row3,
@@ -1105,7 +1130,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 0.5vw 0.5vw 0.5vw 0.3vw;
-  height: 4vw;
+  height: 5vw;
   width: 47.3vw;
   gap: 0.2vw;
   margin: 0 0 0 1.6vw;
@@ -1113,10 +1138,7 @@ button:hover {
 }
 .probel1 {
   width: 46.6vw;
-  height: 3vw;
-  background-image: url(../static/images/probel.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
+  height: 4vw;
 }
 /* <!------- стиражка -------> */
 
@@ -1161,6 +1183,48 @@ h1 {
   background-color: #ff4a8c;
   color: #ffffff;
 }
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  height: 30vw;
+  padding: 0;
+  gap: 1.5vw;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1vw;
+  aspect-ratio: 2 / 1;
+  background-image: url('../static/images/congratulations_3.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#close-modal {
+  width: 50%;
+  height: 5vw;
+  max-width: 450px;
+}
 /* <!------- подвал покажровая анимация -------> */
 .footer_transition {
   position: relative;
@@ -1183,11 +1247,11 @@ h1 {
   width: 100vw;
   height: 6vw;
   background-color: #ffd9e7;
+  justify-content: center;
 }
 .names {
   display: flex;
   flex-direction: row;
-  padding: 0.5vw;
   width: 100vw;
   height: 5vw;
   gap: 0.6vw;
@@ -1198,12 +1262,13 @@ h1 {
   font-size: 2vw;
   color: #ffffff;
   text-align: center;
+  justify-content: center;
 }
 .name1,
 .name2,
 .name3,
 .name4 {
-  width: 24vw;
+  width: 25vw;
   height: 4vw;
   background-image: url(../static/images/background_for_names.svg);
   background-size: contain;

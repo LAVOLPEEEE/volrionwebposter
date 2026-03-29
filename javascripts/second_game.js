@@ -1,5 +1,6 @@
 let draggingLetter = null
 let successfulLettersInWords = [0, 0, 0]
+const basePicture = `url("../static/images/empty1.svg")`
 
 function makeDraggableElement(element) {
   let isDragging = false
@@ -62,7 +63,6 @@ function makeDraggableElement(element) {
     const currentPositionX = element.style.left
     const currentPositionY = element.style.top
 
-    // TODO вот тут -1 и -0 нужно менять, чтобы после неудачной попытки не двигались буквы
     element.style.left = toVw(baseLeft, -1)
     element.style.top = toVw(baseTop, 0)
 
@@ -82,7 +82,6 @@ function makeDraggableElement(element) {
         setWrongPicture(cell)
       }
     } else if (cell && cell.classList.contains('right_flex_second_game')) {
-      // TODO вот тут -1 и -0 нужно менять, чтобы после неудачной попытки не двигались буквы
       element.style.left = toVw(currentPositionX, -1)
       element.style.top = toVw(currentPositionY, 0)
     }
@@ -101,35 +100,33 @@ function toVw(number, bias) {
 }
 
 function setWrongPicture(elem) {
-  const basePictureOffset = 0 + 'vw'
-  const wrongPictureOffset = -18 + 'vw'
+  const wrongPicture = `url("../static/images/wrong1.svg")`
 
   const wordNumber = elem.parentElement.dataset.answer_word_number
-  const victoryPicture = document.querySelector(
+  const answerPicture = document.querySelector(
     '.answer_second_game' + wordNumber
   )
 
-  victoryPicture.style.backgroundPositionX = wrongPictureOffset
+  answerPicture.style.backgroundImage = wrongPicture
   setTimeout(() => {
-    victoryPicture.style.backgroundPositionX = basePictureOffset
+    answerPicture.style.backgroundImage = basePicture
   }, PAIR_LETTER_CLICK_ANIMATION_TIME)
 }
 
 function setSuccessfulPicture(elem) {
-  const basePictureOffset = 0 + 'vw'
-  const successfulPictureOffset = -9 + 'vw'
+  const successfulPicture = `url("../static/images/true1.svg")`
 
   const wordNumber = elem.parentElement.dataset.answer_word_number
-  const victoryPicture = document.querySelector(
+  const answerPicture = document.querySelector(
     '.answer_second_game' + wordNumber
   )
 
   successfulLettersInWords[wordNumber - 1]++
 
-  victoryPicture.style.backgroundPositionX = successfulPictureOffset
+  answerPicture.style.backgroundImage = successfulPicture
   if (successfulLettersInWords[wordNumber - 1] < 6) {
     setTimeout(() => {
-      victoryPicture.style.backgroundPositionX = basePictureOffset
+      answerPicture.style.backgroundImage = basePicture
     }, PAIR_LETTER_CLICK_ANIMATION_TIME)
   }
 }

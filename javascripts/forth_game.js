@@ -5,7 +5,7 @@ const inner = document.createElement('div')
 inner.className = 'messages-inner'
 messagesRoot.appendChild(inner)
 
-const API_KEY = ''
+const API_KEY = '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'
 const API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 const SYSTEM_PROMPT = `
@@ -19,18 +19,18 @@ window.addEventListener('load', () => {
   startConversation()
 })
 
-async function startConversation() {
+function startConversation() {
   try {
-    const greeting = await askLLM('Поприветствуй коротко')
+    const greeting = askLLM('Поприветствуй коротко')
     addMessage(greeting, 'bot')
   } catch (e) {
     console.error('Стартовый промт не сработал:', e)
-    addMessage('У меня много дел. Позже вернусь.', 'bot')
+    addMessage('Приветик', 'bot')
   }
 }
 
-async function askLLM(userText) {
-  const response = await fetch(API_URL, {
+function askLLM(userText) {
+  const response = fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -49,11 +49,11 @@ async function askLLM(userText) {
   })
 
   if (!response.ok) {
-    const errorText = await response.text()
+    const errorText = response.text()
     throw new Error(`HTTP ${response.status}: ${errorText}`)
   }
 
-  const data = await response.json()
+  const data = response.json()
   return data.choices[0].message.content.trim()
 }
 
@@ -70,7 +70,7 @@ function addMessage(text, author) {
   messagesRoot.scrollTop = messagesRoot.scrollHeight
 }
 
-async function sendMessage() {
+function sendMessage() {
   const text = input.dataset.originalru
   if (!text) return
 
@@ -94,7 +94,7 @@ async function sendMessage() {
   }
 
   try {
-    const botReply = await askLLM(text)
+    const botReply = askLLM(text)
 
     inner.removeChild(typingMsg)
 
@@ -104,7 +104,7 @@ async function sendMessage() {
     console.error(e)
 
     console.log(clearQuestion(text))
-    addMessage('Давай потом поговорим.', 'bot')
+    addMessage('Я не поняла', 'bot')
   }
 }
 

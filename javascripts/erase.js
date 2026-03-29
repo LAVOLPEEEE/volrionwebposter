@@ -5,6 +5,9 @@ const resetBtn = document.getElementById('resetBtn')
 let isScratching = false
 let originalImageData
 
+let scratchedArea = 0
+const PERCENTAGE_TO_ERASE_FOR_MODAL = 55
+
 function resizeCanvas() {
   const computedStyle = getComputedStyle(canvas)
   const width = parseFloat(computedStyle.width)
@@ -43,6 +46,10 @@ canvas.addEventListener('mousemove', (e) => {
   ctx.beginPath()
   ctx.arc(x, y, 50, 0, Math.PI * 2)
   ctx.fill()
+
+  if (Math.random() < 0.1) {
+    checkScratchedPercentage()
+  }
 })
 
 canvas.addEventListener('touchstart', (e) => {
@@ -65,14 +72,50 @@ canvas.addEventListener('touchmove', (e) => {
   ctx.beginPath()
   ctx.arc(x, y, 15, 0, Math.PI * 2)
   ctx.fill()
+
+  if (Math.random() < 0.1) {
+    checkScratchedPercentage()
+  }
 })
 
-// Кнопка сброса
 resetBtn.addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
   ctx.putImageData(originalImageData, 0, 0)
   ctx.globalCompositeOperation = 'destination-out'
+  scratchedArea = 0
 })
 
 window.addEventListener('load', resizeCanvas)
 window.addEventListener('resize', resizeCanvas)
+
+function getScratchedPercentage() {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+  const pixels = imageData.data
+  let transparentCount = 0
+  let totalPixels = 0
+
+  for (let i = 3; i < pixels.length; i += 4) {
+    if (pixels[i] === 0) transparentCount++
+    totalPixels++
+  }
+
+  scratchedArea = (transparentCount / totalPixels) * 100
+  return scratchedArea
+}
+
+function checkScratchedPercentage() {
+  const percentage = getScratchedPercentage()
+  console.log(`Стёрто: ${percentage.toFixed(1)}%`)
+
+  if (percentage >= PERCENTAGE_TO_ERASE_FOR_MODAL) {
+    onScratchComplete()
+  }
+}
+
+function onScratchComplete() {
+  document.getElementById('modal-overlay').style.display = 'flex'
+
+  document.getElementById('close-modal').onclick = () => {
+    document.getElementById('modal-overlay').style.display = 'none'
+  }
+}
