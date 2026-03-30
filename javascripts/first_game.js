@@ -5,7 +5,7 @@ let firstButton = null
 
 function updateProgressBar() {
   const progressBar = document.querySelector('.progressbar')
-  const progressBarPicture = `url("static/images/proc${successfulPairsCount}0.svg")`
+  const progressBarPicture = `url("./static/images/proc${successfulPairsCount}0.svg")`
 
   progressBar.style.backgroundImage = progressBarPicture
 }
