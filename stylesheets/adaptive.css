@@ -104,6 +104,9 @@
     font-size: 5vw;
     padding-top: 2.8vw;
   }
+  .click-link {
+    font-size: 4vw;
+  }
 
   /* вторая игра */
   .big_flex_second_game {

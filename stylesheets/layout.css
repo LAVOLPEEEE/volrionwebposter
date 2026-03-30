@@ -507,7 +507,7 @@ body {
   font-style: normal;
   font-size: 2vw;
   color: #45893a;
-  padding-top: 8%;
+  padding-top: 9.5%;
   padding-left: 4%;
 }
 
@@ -1273,6 +1273,4 @@ h1 {
   background-image: url(../static/images/background_for_names.svg);
   background-size: contain;
   background-repeat: no-repeat;
-}
-.name1 {
 }
