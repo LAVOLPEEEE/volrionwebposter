@@ -37,9 +37,9 @@ function playSound(soundUrl) {
 }
 
 function checkPair(secondButton) {
-  const basePicture = 'static/images/empty.svg'
-  const wrongPicture = 'static/images/wrong.svg'
-  const successfulPicture = 'static/images/true.svg'
+  const basePicture = './static/images/empty.svg'
+  const wrongPicture = './static/images/wrong.svg'
+  const successfulPicture = './static/images/true.svg'
 
   const firstLetter = firstButton.dataset.letter
   const secondLetter = secondButton.dataset.letter

@@ -1,6 +1,6 @@
 let draggingLetter = null
 let successfulLettersInWords = [0, 0, 0]
-const basePicture = `url("static/images/empty1.svg")`
+const basePicture = `url("./static/images/empty1.svg")`
 
 function makeDraggableElement(element) {
   let isDragging = false
@@ -100,7 +100,7 @@ function toVw(number, bias) {
 }
 
 function setWrongPicture(elem) {
-  const wrongPicture = `url("static/images/wrong1.svg")`
+  const wrongPicture = `url("./static/images/wrong1.svg")`
 
   const wordNumber = elem.parentElement.dataset.answer_word_number
   const answerPicture = document.querySelector(
@@ -114,7 +114,7 @@ function setWrongPicture(elem) {
 }
 
 function setSuccessfulPicture(elem) {
-  const successfulPicture = `url("static/images/true1.svg")`
+  const successfulPicture = `url("./static/images/true1.svg")`
 
   const wordNumber = elem.parentElement.dataset.answer_word_number
   const answerPicture = document.querySelector(
