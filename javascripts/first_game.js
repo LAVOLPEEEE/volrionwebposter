@@ -1,4 +1,4 @@
-const PAIR_LETTER_CLICK_ANIMATION_TIME = 200
+const PAIR_LETTER_CLICK_ANIMATION_TIME = 700
 
 let successfulPairsCount = 0
 let firstButton = null
