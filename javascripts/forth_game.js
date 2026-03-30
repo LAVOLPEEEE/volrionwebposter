@@ -5,7 +5,7 @@ const inner = document.createElement('div')
 inner.className = 'messages-inner'
 messagesRoot.appendChild(inner)
 
-const API_KEY = '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'
+const API_KEY = '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'
 const API_URL = 'https://api.groq.com/openai/v1/chat/completions'
 
 const SYSTEM_PROMPT = `
