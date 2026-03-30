@@ -19,9 +19,9 @@ window.addEventListener('load', () => {
   startConversation()
 })
 
-function startConversation() {
+async function startConversation() {
   try {
-    const greeting = askLLM('Поприветствуй коротко')
+    const greeting = await askLLM('Поприветствуй коротко')
     addMessage(greeting, 'bot')
   } catch (e) {
     console.error('Стартовый промт не сработал:', e)
@@ -29,8 +29,8 @@ function startConversation() {
   }
 }
 
-function askLLM(userText) {
-  const response = fetch(API_URL, {
+async function askLLM(userText) {
+  const response = await fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -48,12 +48,13 @@ function askLLM(userText) {
     })
   })
 
+  const raw = await response.text()
+
   if (!response.ok) {
-    const errorText = response.text()
-    throw new Error(`HTTP ${response.status}: ${errorText}`)
+    throw new Error(`HTTP ${response.status}: ${raw}`)
   }
 
-  const data = response.json()
+  const data = JSON.parse(raw)
   return data.choices[0].message.content.trim()
 }
 
@@ -70,7 +71,7 @@ function addMessage(text, author) {
   messagesRoot.scrollTop = messagesRoot.scrollHeight
 }
 
-function sendMessage() {
+async function sendMessage() {
   const text = input.dataset.originalru
   if (!text) return
 
@@ -94,7 +95,7 @@ function sendMessage() {
   }
 
   try {
-    const botReply = askLLM(text)
+    const botReply = await askLLM(text)
 
     inner.removeChild(typingMsg)
 
